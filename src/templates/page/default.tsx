@@ -23,16 +23,16 @@ const DefaultPageTemplate: React.FC<Props> = props => {
 
   return (
     <>
-      {/* {!!acf?.modules && (
+      {!!template && (
         <FlexibleContent
-          rows={acf.modules}
+          modules={template.flexibleContentModules.contentModule}
           data={{
             title,
             uri,
             slug,
           }}
         />
-      )} */}
+      )}
     </>
   )
 }
