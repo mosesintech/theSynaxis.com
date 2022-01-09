@@ -43,6 +43,11 @@ export const fragments = graphql`
             }
             image {
               altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
           }
           carouselButton {
@@ -82,6 +87,11 @@ export const fragments = graphql`
                 }
                 image {
                   altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
                 }
               }
               optionTwo {
@@ -94,10 +104,20 @@ export const fragments = graphql`
                 }
                 image {
                   altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
                 }
               }
               optionImage {
                 altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
               }
             }
           }
@@ -136,6 +156,11 @@ export const fragments = graphql`
             text
             image {
               altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             button {
               target
@@ -156,6 +181,11 @@ export const fragments = graphql`
           }
           imageGallery {
             altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
         }
         ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Hero {
@@ -166,6 +196,11 @@ export const fragments = graphql`
           heroBackgroundVideo
           heroBackgroundImage {
             altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
           heroButton {
             target
@@ -215,6 +250,11 @@ export const fragments = graphql`
             text
             image {
               altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             button {
               target
@@ -238,6 +278,11 @@ export const fragments = graphql`
             text
             image {
               altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             button {
               target
@@ -310,6 +355,11 @@ export const fragments = graphql`
                 }
                 image {
                   altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
                 }
               }
               optionTwo {
@@ -322,10 +372,20 @@ export const fragments = graphql`
                 }
                 image {
                   altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
                 }
               }
               optionImage {
                 altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
               }
             }
           }
@@ -405,6 +465,11 @@ export const fragments = graphql`
           }
           textImage {
             altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
         }
         ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_ThreeColumns {
@@ -427,6 +492,11 @@ export const fragments = graphql`
             }
             image {
               altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
           }
         }
