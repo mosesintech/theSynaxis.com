@@ -8,6 +8,7 @@ import DataTable from "./DataTable"
 import FeatureLinks from "./FeatureLinks"
 import Gallery from "./Gallery"
 import Hero from "./Hero"
+import Intro from "./Intro"
 import LatestArticles from "./LatestArticles"
 import LinkBoxes from "./LinkBoxes"
 import LinkPanels from "./LinkPanels"
@@ -32,6 +33,7 @@ const components = {
   FeatureLinks,
   Gallery,
   Hero,
+  Intro,
   LatestArticles,
   LinkBoxes,
   LinkPanels,
