@@ -6,6 +6,7 @@ import Carousel from "./Carousel"
 import CompareProducts from "./CompareProducts"
 import DataTable from "./DataTable"
 import FeatureLinks from "./FeatureLinks"
+import Form from "./Form"
 import Gallery from "./Gallery"
 import Hero from "./Hero"
 import Intro from "./Intro"
@@ -31,6 +32,7 @@ const components = {
   CompareProducts,
   DataTable,
   FeatureLinks,
+  Form,
   Gallery,
   Hero,
   Intro,
