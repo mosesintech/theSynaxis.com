@@ -1,6 +1,6 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import React from "react"
+import Helmet from "react-helmet"
+import { StaticQuery, graphql } from "gatsby"
 
 const Seo = ({
   title = null,
@@ -21,17 +21,13 @@ const Seo = ({
     `}
     render={({
       site: {
-        siteMetadata: {
-          defaultTitle,
-          titleTemplate,
-          defaultDescription,
-        },
+        siteMetadata: { defaultTitle, titleTemplate, defaultDescription },
       },
     }) => {
       const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-      };
+      }
 
       return (
         <>
@@ -39,9 +35,9 @@ const Seo = ({
             <meta name="description" content={seo.description} />
           </Helmet>
         </>
-      );
+      )
     }}
   />
-);
+)
 
-export default Seo;
+export default Seo
