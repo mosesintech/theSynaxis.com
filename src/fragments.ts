@@ -141,6 +141,21 @@ export const fragments = graphql`
             }
           }
         }
+        ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Faq {
+          fieldGroupName
+          faqTitle
+          faqText
+          faqBackgroundColor
+          faqButton {
+            target
+            title
+            url
+          }
+          faq {
+            question
+            answer
+          }
+        }
         ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_FeatureLinks {
           fieldGroupName
           featureLinksTitle
@@ -242,34 +257,6 @@ export const fragments = graphql`
             url
           }
           linkBoxes {
-            title
-            text
-            image {
-              altText
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            button {
-              target
-              title
-              url
-            }
-          }
-        }
-        ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_LinkPanels {
-          fieldGroupName
-          linkPanelsTitle
-          linkPanelsText
-          linkPanelsBackgroundColor
-          linkPanelsButton {
-            target
-            title
-            url
-          }
-          linkPanels {
             title
             text
             image {
@@ -653,6 +640,21 @@ export const fragments = graphql`
                 item
               }
             }
+          }
+        }
+        ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Faq {
+          fieldGroupName
+          faqTitle
+          faqText
+          faqBackgroundColor
+          faqButton {
+            target
+            title
+            url
+          }
+          faq {
+            question
+            answer
           }
         }
         ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_FeatureLinks {
