@@ -39,5 +39,14 @@ module.exports = {
       },
     },
     `gatsby-theme-headless-wordpress`,
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /svg/,
+        },
+      },
+    }
   ],
 }
