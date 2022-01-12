@@ -1,6 +1,22 @@
 import React from "react"
 
-const Hero = props => {
+import { FlexibleContentProps } from "../../interfaces"
+
+export interface HeroProps extends FlexibleContentProps {
+  heroTitle?: string;
+  heroText?: string;
+  heroBackgroundColor?: string;
+  heroBackgroundVideo?: string;
+  heroBackgroundImage?: {};
+  heroGallery?: [];
+  heroButton?: {
+    target?: string;
+    title?: string;
+    url?: string;
+  }
+}
+
+const Hero: React.FC<HeroProps> = (props) => {
   return (
     <>
       <h1>HERO</h1>

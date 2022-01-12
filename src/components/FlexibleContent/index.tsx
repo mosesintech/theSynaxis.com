@@ -1,31 +1,68 @@
 import React from "react"
 
-import Banner from "./Banner"
-import CallToAction from "./CallToAction"
-import Carousel from "./Carousel"
-import CompareProducts from "./CompareProducts"
-import DataTable from "./DataTable"
-import FeatureLinks from "./FeatureLinks"
-import Form from "./Form"
-import Gallery from "./Gallery"
-import Hero from "./Hero"
-import Intro from "./Intro"
-import LatestArticles from "./LatestArticles"
-import LinkBoxes from "./LinkBoxes"
-import LinkPanels from "./LinkPanels"
-import List from "./List"
-import Logos from "./Logos"
-import NavBlock from "./NavBlock"
-import Selection from "./Selection"
-import SupportTiers from "./SupportTiers"
-import Switch from "./Switch"
-import TextArea from "./TextArea"
-import TextBlock from "./TextBlock"
-import TextImage from "./TextImage"
-import ThreeColumns from "./ThreeColumns"
-import Videos from "./Videos"
+import Banner, { BannerProps } from "./Banner"
+import CallToAction, { CTAProps } from "./CallToAction"
+import Carousel, { CarouselProps } from "./Carousel"
+import CompareProducts, { CompareProductsProps } from "./CompareProducts"
+import DataTable, { DataTableProps } from "./DataTable"
+import FeatureLinks, { FeatureLinksProps } from "./FeatureLinks"
+import Form, { FormProps } from "./Form"
+import Gallery, { GalleryProps } from "./Gallery"
+import Hero, { HeroProps } from "./Hero"
+import Intro, { IntroProps } from "./Intro"
+import LatestArticles, { LatestArticlesProps } from "./LatestArticles"
+import LinkBoxes, { LinkBoxesProps } from "./LinkBoxes"
+import LinkPanels, { LinkPanelsProps } from "./LinkPanels"
+import List, { ListProps } from "./List"
+import Logos, { LogosProps } from "./Logos"
+import NavBlock, { NavBlockProps } from "./NavBlock"
+import Selection, { SelectionProps } from "./Selection"
+import SupportTiers, { SupportTiersProps } from "./SupportTiers"
+import Switch, { SwitchProps } from "./Switch"
+import TextArea, { TextAreaProps } from "./TextArea"
+import TextBlock, { TextBlockProps } from "./TextBlock"
+import TextImage, { TextImageProps } from "./TextImage"
+import ThreeColumns, { ThreeColumnsProps } from "./ThreeColumns"
+import Videos, { VideoProps } from "./Videos"
 
-const components = {
+interface Components {
+  Banner: React.FC<BannerProps>;
+  CallToAction: React.FC<CTAProps>;
+  Carousel: React.FC<CarouselProps>;
+  CompareProducts: React.FC<CompareProductsProps>;
+  DataTable: React.FC<DataTableProps>;
+  FeatureLinks: React.FC<FeatureLinksProps>;
+  Form: React.FC<FormProps>;
+  Gallery: React.FC<GalleryProps>;
+  Hero: React.FC<HeroProps>;
+  Intro: React.FC<IntroProps>;
+  LatestArticles: React.FC<LatestArticlesProps>;
+  LinkBoxes: React.FC<LinkBoxesProps>;
+  LinkPanels: React.FC<LinkPanelsProps>;
+  List: React.FC<ListProps>;
+  Logos: React.FC<LogosProps>;
+  NavBlock: React.FC<NavBlockProps>;
+  Selection: React.FC<SelectionProps>;
+  SupportTiers: React.FC<SupportTiersProps>;
+  Switch: React.FC<SwitchProps>;
+  TextArea: React.FC<TextAreaProps>;
+  TextBlock: React.FC<TextBlockProps>;
+  TextImage: React.FC<TextImageProps>;
+  ThreeColumns: React.FC<ThreeColumnsProps>;
+  Videos: React.FC<VideoProps>;
+}
+
+interface Props {
+  modules?: any;
+  data?: {
+    title?: string;
+    uri?: string;
+    slug?: string;
+  }
+}
+
+
+const components: Components = {
   Banner,
   CallToAction,
   Carousel,
@@ -52,25 +89,26 @@ const components = {
   Videos,
 }
 
-const FlexibleContent = props => {
+const FlexibleContent: React.FC<Props> = props => {
   const { modules, data } = props
 
   if (!!modules) {
     return modules
-      .filter(o => !!o)
-      .map(({ fieldGroupName, ...moduleData }, index) => {
+      .filter((module:any) => !!module)
+      .map((module:any, index:any) => {
+        const { fieldGroupName } = module;
         if (!fieldGroupName) {
           return null
         }
 
-        const type = fieldGroupName.split("_").slice(-1)[0]
+        const type:keyof Components = fieldGroupName.split("_").slice(-1)[0]
 
-        const Component = components[type]
+        const Component = components[type];
 
         return (
           Component && (
             <div key={index}>
-              <Component {...moduleData} {...data} />
+              <Component {...module} {...data} />
             </div>
           )
         )

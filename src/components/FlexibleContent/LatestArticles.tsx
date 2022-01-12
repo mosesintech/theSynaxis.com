@@ -1,22 +1,22 @@
 import React from "react"
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 
-interface ModuleProps extends FlexibleContentProps {
-  latestArticlesTitle?: string;
-  latestArticlesText?: string;
-  latestArticlesPostType?: string;
-  latestArticlesPostLimit?: string;
-  latestArticlesBackgroundColor?: string;
+export interface LatestArticlesProps extends FlexibleContentProps {
+  latestArticlesTitle?: string
+  latestArticlesText?: string
+  latestArticlesPostType?: string
+  latestArticlesPostLimit?: string
+  latestArticlesBackgroundColor?: string
   latestArticlesButton?: {
-    target?: string;
-    title?: string;
-    url?: string;
+    target?: string
+    title?: string
+    url?: string
   }
 }
 
-const LatestArticles: React.FC<ModuleProps> = (props) => {
+const LatestArticles: React.FC<LatestArticlesProps> = props => {
   const usePostData = () => {
     const { allWpPost } = useStaticQuery(
       graphql`
@@ -32,8 +32,11 @@ const LatestArticles: React.FC<ModuleProps> = (props) => {
     return { allWpPost }
   }
 
-  if(!!props.latestArticlesPostType && props.latestArticlesPostType.toLowerCase() === 'post') {
-    const allPosts = usePostData();
+  if (
+    !!props.latestArticlesPostType &&
+    props.latestArticlesPostType.toLowerCase() === "post"
+  ) {
+    const allPosts = usePostData()
 
     return (
       <>
@@ -41,7 +44,7 @@ const LatestArticles: React.FC<ModuleProps> = (props) => {
         <pre>{JSON.stringify(props, null, 2)}</pre>
         <pre>{JSON.stringify(allPosts, null, 2)}</pre>
       </>
-    )  
+    )
   }
 
   return (

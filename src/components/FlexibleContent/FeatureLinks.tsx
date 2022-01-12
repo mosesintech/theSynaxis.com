@@ -1,6 +1,20 @@
 import React from "react"
 
-const FeatureLinks = props => {
+import { FlexibleContentProps } from "../../interfaces"
+
+export interface FeatureLinksProps extends FlexibleContentProps {
+  featureLinksTitle?: string
+  featureLinksText?: string
+  featureLinksBackgroundColor?: string
+  featureLinksButton?: {
+    target?: string
+    title?: string
+    url?: string
+  }
+  featureLinks?: []
+}
+
+const FeatureLinks: React.FC<FeatureLinksProps> = props => {
   return (
     <>
       <h1>FEATURE LINKS</h1>

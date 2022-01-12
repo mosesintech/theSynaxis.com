@@ -1,6 +1,20 @@
 import React from "react"
 
-const LinkBoxes = props => {
+import { FlexibleContentProps } from "../../interfaces"
+
+export interface LinkBoxesProps extends FlexibleContentProps {
+  linkBoxesTitle?: string;
+  linkBoxesText?: string;
+  linkBoxesBackgroundColor?: string;
+  linkBoxesButton?: {
+    target?: string;
+    title?: string;
+    url?: string;
+  };
+  linkBoxes?: [];
+}
+
+const LinkBoxes: React.FC<LinkBoxesProps> = (props) => {
   return (
     <>
       <h1>LINK BOXES</h1>

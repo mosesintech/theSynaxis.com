@@ -1,6 +1,22 @@
 import React from "react"
 
-const DataTable = props => {
+import { FlexibleContentProps } from "../../interfaces"
+
+export interface DataTableProps extends FlexibleContentProps {
+  dataTableTitle?: string
+  dataTableText?: string
+  dataTableBackgroundColor?: string
+  dataTableButton?: {
+    target?: string
+    title?: string
+    url?: string
+  }
+  dataTable?: {
+    columns?: []
+  }
+}
+
+const DataTable: React.FC<DataTableProps> = props => {
   return (
     <>
       <h1>DATA TABLE</h1>

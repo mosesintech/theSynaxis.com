@@ -1,20 +1,10 @@
 import React from "react"
 import { graphql, PageProps } from "gatsby"
 
+import { TemplatePageProps } from '../../interfaces'
 import FlexibleContent from "../../components/FlexibleContent"
 
-interface Props extends PageProps {
-  data: {
-    page: {
-      title?: string
-      uri?: string
-      slug?: string
-      template?: any
-    }
-  }
-}
-
-const ContactPageTemplate: React.FC<Props> = props => {
+const ContactPageTemplate: React.FC<TemplatePageProps> = props => {
   const {
     data: {
       page: { title, uri, slug, template },

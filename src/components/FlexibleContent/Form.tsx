@@ -1,18 +1,17 @@
 import React from "react"
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 
-interface ModuleProps extends FlexibleContentProps {
-  formId?: string;
-  formTitle?: string;
-  formText?: string;
-  formBackgroundColor?: string;
+export interface FormProps extends FlexibleContentProps {
+  formTitle?: string
+  formText?: string
+  formBackgroundColor?: string
+  formId?: string
 }
 
-
-const Form: React.FC<ModuleProps> = (props) => {
-  const { formId, formTitle, formText, formBackgroundColor } = props;
+const Form: React.FC<FormProps> = (props) => {
+  const { formId, formTitle, formText, formBackgroundColor } = props
 
   const useGravityData = () => {
     const { allWpGravityFormsForm } = useStaticQuery(
@@ -32,32 +31,32 @@ const Form: React.FC<ModuleProps> = (props) => {
               }
               formFields {
                 nodes {
-                id
-                type
-                formId
+                  id
+                  type
+                  formId
                   ... on WpTextField {
-                      id
-                      label
-                      cssClass
-                      isRequired
-                      description
-                      placeholder
+                    id
+                    label
+                    cssClass
+                    isRequired
+                    description
+                    placeholder
                   }
                   ... on WpEmailField {
-                      id
-                      label
-                      cssClass
-                      isRequired
-                      description
-                      placeholder
+                    id
+                    label
+                    cssClass
+                    isRequired
+                    description
+                    placeholder
                   }
                   ... on WpTextAreaField {
-                      id
-                      label
-                      cssClass
-                      isRequired
-                      description
-                      placeholder
+                    id
+                    label
+                    cssClass
+                    isRequired
+                    description
+                    placeholder
                   }
                 }
               }
@@ -69,9 +68,11 @@ const Form: React.FC<ModuleProps> = (props) => {
     return { allWpGravityFormsForm }
   }
 
-  const { allWpGravityFormsForm } = useGravityData();
+  const { allWpGravityFormsForm } = useGravityData()
 
-  const form = allWpGravityFormsForm.nodes.find((form:any) => Number(form.formId) === Number(formId));
+  const form = allWpGravityFormsForm.nodes.find(
+    (form: any) => Number(form.formId) === Number(formId)
+  )
 
   return (
     <>

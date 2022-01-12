@@ -1,6 +1,15 @@
 import React from "react"
 
-const Switch = props => {
+import { FlexibleContentProps } from "../../interfaces"
+
+export interface SwitchProps extends FlexibleContentProps {
+  switchTitle?: string
+  switchText?: string
+  switchBackgroundColor?: string
+  switchOptions?: []
+}
+
+const Switch: React.FC<SwitchProps> = props => {
   return (
     <>
       <h1>SWITCH</h1>

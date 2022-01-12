@@ -1,6 +1,20 @@
 import React from "react"
 
-const Gallery = props => {
+import { FlexibleContentProps } from "../../interfaces"
+
+export interface GalleryProps extends FlexibleContentProps {
+  galleryTitle?: string;
+  galleryText?: string;
+  galleryBackgroundColor?: string;
+  galleryButton?: {
+    target?: string;
+    title?: string;
+    url?: string;
+  }
+  imageGallery?: [];
+}
+
+const Gallery: React.FC<GalleryProps> = (props) => {
   return (
     <>
       <h1>GALLERY</h1>
