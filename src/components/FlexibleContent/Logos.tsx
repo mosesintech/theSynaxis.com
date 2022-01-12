@@ -3,18 +3,18 @@ import React from "react"
 import { FlexibleContentProps } from "../../interfaces"
 
 export interface LogosProps extends FlexibleContentProps {
-  logosTitle?: string;
-  logosText?: string;
-  logosBackgroundColor?: string;
+  logosTitle?: string
+  logosText?: string
+  logosBackgroundColor?: string
   logosButton?: {
-    target?: string;
-    title?: string;
-    url?: string;
-  };
-  logos?: [];
+    target?: string
+    title?: string
+    url?: string
+  }
+  logos?: []
 }
 
-const Logos: React.FC<LogosProps> = (props) => {
+const Logos: React.FC<LogosProps> = props => {
   return (
     <>
       <h1>LOGOS</h1>

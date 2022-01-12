@@ -3,19 +3,19 @@ import React from "react"
 import { FlexibleContentProps } from "../../interfaces"
 
 export interface TextImageProps extends FlexibleContentProps {
-  textImageTitle?: string;
-  textImageText?: string;
-  textImagePosition?: string;
-  textImageBackgroundColor?: string;
+  textImageTitle?: string
+  textImageText?: string
+  textImagePosition?: string
+  textImageBackgroundColor?: string
   textImageButton?: {
-    target?: string;
-    title?: string;
-    url?: string;
-  };
-  textImage?: {};
+    target?: string
+    title?: string
+    url?: string
+  }
+  textImage?: {}
 }
 
-const TextImage: React.FC<TextImageProps> = (props) => {
+const TextImage: React.FC<TextImageProps> = props => {
   return (
     <>
       <h1>TEXT IMAGE</h1>

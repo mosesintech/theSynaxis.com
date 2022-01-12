@@ -3,18 +3,18 @@ import React from "react"
 import { FlexibleContentProps } from "../../interfaces"
 
 export interface LinkBoxesProps extends FlexibleContentProps {
-  linkBoxesTitle?: string;
-  linkBoxesText?: string;
-  linkBoxesBackgroundColor?: string;
+  linkBoxesTitle?: string
+  linkBoxesText?: string
+  linkBoxesBackgroundColor?: string
   linkBoxesButton?: {
-    target?: string;
-    title?: string;
-    url?: string;
-  };
-  linkBoxes?: [];
+    target?: string
+    title?: string
+    url?: string
+  }
+  linkBoxes?: []
 }
 
-const LinkBoxes: React.FC<LinkBoxesProps> = (props) => {
+const LinkBoxes: React.FC<LinkBoxesProps> = props => {
   return (
     <>
       <h1>LINK BOXES</h1>

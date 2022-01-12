@@ -3,18 +3,18 @@ import React from "react"
 import { FlexibleContentProps } from "../../interfaces"
 
 export interface LinkPanelsProps extends FlexibleContentProps {
-  linkPanelsTitle?: string;
-  linkPanelsText?: string;
-  linkPanelsBackgroundColor?: string;
+  linkPanelsTitle?: string
+  linkPanelsText?: string
+  linkPanelsBackgroundColor?: string
   linkPanelsButton?: {
-    target?: string;
-    title?: string;
-    url?: string;
-  };
-  linkPanels?: [];
+    target?: string
+    title?: string
+    url?: string
+  }
+  linkPanels?: []
 }
 
-const LinkPanels: React.FC<LinkPanelsProps> = (props) => {
+const LinkPanels: React.FC<LinkPanelsProps> = props => {
   return (
     <>
       <h1>LINK PANELS</h1>

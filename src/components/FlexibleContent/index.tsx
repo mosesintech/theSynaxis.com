@@ -26,41 +26,40 @@ import ThreeColumns, { ThreeColumnsProps } from "./ThreeColumns"
 import Videos, { VideoProps } from "./Videos"
 
 interface Components {
-  Banner: React.FC<BannerProps>;
-  CallToAction: React.FC<CTAProps>;
-  Carousel: React.FC<CarouselProps>;
-  CompareProducts: React.FC<CompareProductsProps>;
-  DataTable: React.FC<DataTableProps>;
-  FeatureLinks: React.FC<FeatureLinksProps>;
-  Form: React.FC<FormProps>;
-  Gallery: React.FC<GalleryProps>;
-  Hero: React.FC<HeroProps>;
-  Intro: React.FC<IntroProps>;
-  LatestArticles: React.FC<LatestArticlesProps>;
-  LinkBoxes: React.FC<LinkBoxesProps>;
-  LinkPanels: React.FC<LinkPanelsProps>;
-  List: React.FC<ListProps>;
-  Logos: React.FC<LogosProps>;
-  NavBlock: React.FC<NavBlockProps>;
-  Selection: React.FC<SelectionProps>;
-  SupportTiers: React.FC<SupportTiersProps>;
-  Switch: React.FC<SwitchProps>;
-  TextArea: React.FC<TextAreaProps>;
-  TextBlock: React.FC<TextBlockProps>;
-  TextImage: React.FC<TextImageProps>;
-  ThreeColumns: React.FC<ThreeColumnsProps>;
-  Videos: React.FC<VideoProps>;
+  Banner: React.FC<BannerProps>
+  CallToAction: React.FC<CTAProps>
+  Carousel: React.FC<CarouselProps>
+  CompareProducts: React.FC<CompareProductsProps>
+  DataTable: React.FC<DataTableProps>
+  FeatureLinks: React.FC<FeatureLinksProps>
+  Form: React.FC<FormProps>
+  Gallery: React.FC<GalleryProps>
+  Hero: React.FC<HeroProps>
+  Intro: React.FC<IntroProps>
+  LatestArticles: React.FC<LatestArticlesProps>
+  LinkBoxes: React.FC<LinkBoxesProps>
+  LinkPanels: React.FC<LinkPanelsProps>
+  List: React.FC<ListProps>
+  Logos: React.FC<LogosProps>
+  NavBlock: React.FC<NavBlockProps>
+  Selection: React.FC<SelectionProps>
+  SupportTiers: React.FC<SupportTiersProps>
+  Switch: React.FC<SwitchProps>
+  TextArea: React.FC<TextAreaProps>
+  TextBlock: React.FC<TextBlockProps>
+  TextImage: React.FC<TextImageProps>
+  ThreeColumns: React.FC<ThreeColumnsProps>
+  Videos: React.FC<VideoProps>
 }
 
 interface Props {
-  modules?: any;
+  modules?: any
   data?: {
-    title?: string;
-    uri?: string;
-    slug?: string;
+    title?: string
+    uri?: string
+    slug?: string
   }
 }
-
 
 const components: Components = {
   Banner,
@@ -94,16 +93,16 @@ const FlexibleContent: React.FC<Props> = props => {
 
   if (!!modules) {
     return modules
-      .filter((module:any) => !!module)
-      .map((module:any, index:any) => {
-        const { fieldGroupName } = module;
+      .filter((module: any) => !!module)
+      .map((module: any, index: any) => {
+        const { fieldGroupName } = module
         if (!fieldGroupName) {
           return null
         }
 
-        const type:keyof Components = fieldGroupName.split("_").slice(-1)[0]
+        const type: keyof Components = fieldGroupName.split("_").slice(-1)[0]
 
-        const Component = components[type];
+        const Component = components[type]
 
         return (
           Component && (

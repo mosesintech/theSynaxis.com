@@ -16,17 +16,18 @@ export interface BannerProps extends FlexibleContentProps {
 const Banner: React.FC<BannerProps> = props => {
   const {
     title,
-    uri,
-    slug,
-    bannerTitle,
-    bannerContent,
-    bannerBackgroundColor,
-    bannerLink,
+    // uri,
+    // slug,
+    // bannerTitle,
+    // bannerContent,
+    // bannerBackgroundColor,
+    // bannerLink,
   } = props
 
   return (
     <>
       <h1>BANNER</h1>
+      <pre>{JSON.stringify(title, null, 2)}</pre>
       <pre>{JSON.stringify(props, null, 2)}</pre>
     </>
   )

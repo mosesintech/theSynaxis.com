@@ -3,18 +3,18 @@ import React from "react"
 import { FlexibleContentProps } from "../../interfaces"
 
 export interface TextBlockProps extends FlexibleContentProps {
-  textBlockTitle?: string;
-  textBlockText?: string;
-  textBlockLocation?: string;
-  textBlockBackgroundColor?: string;
+  textBlockTitle?: string
+  textBlockText?: string
+  textBlockLocation?: string
+  textBlockBackgroundColor?: string
   textBlockButton?: {
-    target?: string;
-    title?: string;
-    url?: string;
-  };
+    target?: string
+    title?: string
+    url?: string
+  }
 }
 
-const TextBlock: React.FC<TextBlockProps> = (props) => {
+const TextBlock: React.FC<TextBlockProps> = props => {
   return (
     <>
       <h1>TEXT BLOCK</h1>

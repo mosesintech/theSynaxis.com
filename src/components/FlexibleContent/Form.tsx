@@ -10,8 +10,13 @@ export interface FormProps extends FlexibleContentProps {
   formId?: string
 }
 
-const Form: React.FC<FormProps> = (props) => {
-  const { formId, formTitle, formText, formBackgroundColor } = props
+const Form: React.FC<FormProps> = props => {
+  const {
+    formId,
+    // formTitle,
+    // formText,
+    // formBackgroundColor
+  } = props
 
   const useGravityData = () => {
     const { allWpGravityFormsForm } = useStaticQuery(

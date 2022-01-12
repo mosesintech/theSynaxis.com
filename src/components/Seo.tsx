@@ -1,86 +1,47 @@
-import * as React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 
-// Types
-interface SEOProps {
-  description?: string;
-  lang?: string;
-  title?: string;
-  meta?: any
-}
-
-interface QueryTypes {
-  site: {
-    siteMetadata: {
-      title: string
-      description: string
-      author: string
-    }
-  }
-}
-
-// Queries
-const SEOQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-        author
+const Seo = ({
+  title = null,
+  description = null,
+  image = null,
+  pathname = null,
+}) => (
+  <StaticQuery
+    query={graphql`
+      query SEOQuery {
+        site {
+          siteMetadata {
+            defaultTitle: title
+            defaultDescription: description
+          }
+        }
       }
-    }
-  }
-`
+    `}
+    render={({
+      site: {
+        siteMetadata: {
+          defaultTitle,
+          titleTemplate,
+          defaultDescription,
+        },
+      },
+    }) => {
+      const seo = {
+        title: title || defaultTitle,
+        description: description || defaultDescription,
+      };
 
-const Seo: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery<QueryTypes>(SEOQuery)
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+      return (
+        <>
+          <Helmet title={seo.title} titleTemplate={titleTemplate}>
+            <meta name="description" content={seo.description} />
+          </Helmet>
+        </>
+      );
+    }}
+  />
+);
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  )
-}
-
-export default Seo
+export default Seo;

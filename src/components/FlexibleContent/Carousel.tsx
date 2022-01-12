@@ -17,18 +17,19 @@ export interface CarouselProps extends FlexibleContentProps {
 const Carousel: React.FC<CarouselProps> = props => {
   const {
     title,
-    uri,
-    slug,
-    carouselTitle,
-    carouselText,
-    carouselBackgroundColor,
-    carouselButton,
-    carouselCard,
+    // uri,
+    // slug,
+    // carouselTitle,
+    // carouselText,
+    // carouselBackgroundColor,
+    // carouselButton,
+    // carouselCard,
   } = props
 
   return (
     <>
       <h1>CAROUSEL</h1>
+      <pre>{JSON.stringify(title, null, 2)}</pre>
       <pre>{JSON.stringify(props, null, 2)}</pre>
     </>
   )

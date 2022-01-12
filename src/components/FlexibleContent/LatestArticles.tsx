@@ -31,13 +31,12 @@ const LatestArticles: React.FC<LatestArticlesProps> = props => {
     )
     return { allWpPost }
   }
+  const allPosts = usePostData()
 
   if (
     !!props.latestArticlesPostType &&
     props.latestArticlesPostType.toLowerCase() === "post"
   ) {
-    const allPosts = usePostData()
-
     return (
       <>
         <h1>LATEST ARTICLES</h1>

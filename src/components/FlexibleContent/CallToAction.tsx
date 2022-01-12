@@ -17,18 +17,19 @@ export interface CTAProps extends FlexibleContentProps {
 const CallToAction: React.FC<CTAProps> = props => {
   const {
     title,
-    uri,
-    slug,
-    ctaTitle,
-    ctaContent,
-    ctaPhoneNumber,
-    ctaBackgroundColor,
-    ctaButton,
+    // uri,
+    // slug,
+    // ctaTitle,
+    // ctaContent,
+    // ctaPhoneNumber,
+    // ctaBackgroundColor,
+    // ctaButton,
   } = props
 
   return (
     <>
       <h1>CALL TO ACTION</h1>
+      <pre>{JSON.stringify(title, null, 2)}</pre>
       <pre>{JSON.stringify(props, null, 2)}</pre>
     </>
   )

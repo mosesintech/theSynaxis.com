@@ -5,7 +5,7 @@ import Header from "./Header"
 import "./layout.css"
 
 interface LayoutProps {
-  children: any;
+  children: any
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {

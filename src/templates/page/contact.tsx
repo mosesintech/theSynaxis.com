@@ -1,7 +1,7 @@
 import React from "react"
-import { graphql, PageProps } from "gatsby"
+import { graphql } from "gatsby"
 
-import { TemplatePageProps } from '../../interfaces'
+import { TemplatePageProps } from "../../interfaces"
 import FlexibleContent from "../../components/FlexibleContent"
 
 const ContactPageTemplate: React.FC<TemplatePageProps> = props => {
