@@ -218,17 +218,6 @@ export const fragments = graphql`
             altText
           }
         }
-        ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Intro {
-          fieldGroupName
-          introTitle
-          introContent
-          introBackgroundColor
-          introButton {
-            target
-            title
-            url
-          }
-        }
         ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_LatestArticles {
           fieldGroupName
           latestArticlesTitle
@@ -741,17 +730,6 @@ export const fragments = graphql`
           }
           heroGallery {
             altText
-          }
-        }
-        ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Intro {
-          fieldGroupName
-          introTitle
-          introContent
-          introBackgroundColor
-          introButton {
-            target
-            title
-            url
           }
         }
         ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_LatestArticles {

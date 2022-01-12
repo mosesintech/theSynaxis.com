@@ -9,7 +9,6 @@ import FeatureLinks, { FeatureLinksProps } from "./FeatureLinks"
 import Form, { FormProps } from "./Form"
 import Gallery, { GalleryProps } from "./Gallery"
 import Hero, { HeroProps } from "./Hero"
-import Intro, { IntroProps } from "./Intro"
 import LatestArticles, { LatestArticlesProps } from "./LatestArticles"
 import LinkBoxes, { LinkBoxesProps } from "./LinkBoxes"
 import LinkPanels, { LinkPanelsProps } from "./LinkPanels"
@@ -35,7 +34,6 @@ interface Components {
   Form: React.FC<FormProps>
   Gallery: React.FC<GalleryProps>
   Hero: React.FC<HeroProps>
-  Intro: React.FC<IntroProps>
   LatestArticles: React.FC<LatestArticlesProps>
   LinkBoxes: React.FC<LinkBoxesProps>
   LinkPanels: React.FC<LinkPanelsProps>
@@ -71,7 +69,6 @@ const components: Components = {
   Form,
   Gallery,
   Hero,
-  Intro,
   LatestArticles,
   LinkBoxes,
   LinkPanels,
