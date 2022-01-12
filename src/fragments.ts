@@ -773,34 +773,6 @@ export const fragments = graphql`
             }
           }
         }
-        ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_LinkPanels {
-          fieldGroupName
-          linkPanelsTitle
-          linkPanelsText
-          linkPanelsBackgroundColor
-          linkPanelsButton {
-            target
-            title
-            url
-          }
-          linkPanels {
-            title
-            text
-            image {
-              altText
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            button {
-              target
-              title
-              url
-            }
-          }
-        }
         ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_List {
           fieldGroupName
           listTitle

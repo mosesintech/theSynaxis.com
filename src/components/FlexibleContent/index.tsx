@@ -11,7 +11,6 @@ import Gallery, { GalleryProps } from "./Gallery"
 import Hero, { HeroProps } from "./Hero"
 import LatestArticles, { LatestArticlesProps } from "./LatestArticles"
 import LinkBoxes, { LinkBoxesProps } from "./LinkBoxes"
-import LinkPanels, { LinkPanelsProps } from "./LinkPanels"
 import List, { ListProps } from "./List"
 import Logos, { LogosProps } from "./Logos"
 import NavBlock, { NavBlockProps } from "./NavBlock"
@@ -36,7 +35,6 @@ interface Components {
   Hero: React.FC<HeroProps>
   LatestArticles: React.FC<LatestArticlesProps>
   LinkBoxes: React.FC<LinkBoxesProps>
-  LinkPanels: React.FC<LinkPanelsProps>
   List: React.FC<ListProps>
   Logos: React.FC<LogosProps>
   NavBlock: React.FC<NavBlockProps>
@@ -71,7 +69,6 @@ const components: Components = {
   Hero,
   LatestArticles,
   LinkBoxes,
-  LinkPanels,
   List,
   Logos,
   NavBlock,
