@@ -7,10 +7,10 @@ export interface LocationProps extends FlexibleContentProps {
   locationText?: string
   locationBackgroundColor?: string
   locationButton?: {
-      target?: string
-      title?: string
-      url?: string
-    }
+    target?: string
+    title?: string
+    url?: string
+  }
   locationMap?: string
   locationAddress?: string
   locationPhoneNumber?: string
