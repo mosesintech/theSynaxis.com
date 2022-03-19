@@ -5,6 +5,7 @@ import { FlexibleContentProps } from "../../interfaces"
 export interface HeroProps extends FlexibleContentProps {
   heroTitle?: string
   heroText?: string
+  heroImage?: {} // Add to WordPress
   heroBackgroundColor?: string
   heroBackgroundVideo?: string
   heroBackgroundImage?: {}

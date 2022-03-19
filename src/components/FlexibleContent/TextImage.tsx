@@ -5,7 +5,7 @@ import { FlexibleContentProps } from "../../interfaces"
 export interface TextImageProps extends FlexibleContentProps {
   textImageTitle?: string
   textImageText?: string
-  textImagePosition?: string
+  textImagePosition?: string // Should also have Right/Left options
   textImageBackgroundColor?: string
   textImageButton?: {
     target?: string
