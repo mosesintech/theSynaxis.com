@@ -1,30 +1,30 @@
 import React from "react"
 
 import Edges from "../Edges"
- 
+
 export default function UtilityMenu() {
   return (
     <>
       <div
         style={{
-          display: 'flex',
+          display: "flex",
           padding: "0",
           color: "#FFFFFF",
-          alignItems: "center"
+          alignItems: "center",
         }}
-        className='bg-indigo-500'
+        className="bg-indigo-500"
       >
         <Edges size="lg">
           <div
             style={{
-              display: 'flex',
+              display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              flexWrap: 'wrap',
+              flexWrap: "wrap",
             }}
           >
-              <p>Utility Menu Text</p>
-              <p>Utility Menu Text</p>
+            <p>Utility Menu Text</p>
+            <p>Utility Menu Text</p>
           </div>
         </Edges>
       </div>
