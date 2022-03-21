@@ -1,10 +1,16 @@
 import React from "react"
+import Headroom from "react-headroom"
+
 import DesktopMenu from "./DesktopMenu"
+// import UtilityMenu from './UtilityMenu'
 
 export default function HeaderMenu() {
   return (
     <>
-      <DesktopMenu />
+      <Headroom>
+        {/* <UtilityMenu /> */}
+        <DesktopMenu />
+      </Headroom>
     </>
   )
 }
