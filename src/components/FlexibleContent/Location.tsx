@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface LocationProps extends FlexibleContentProps {
   locationTitle?: string
@@ -20,8 +21,10 @@ export interface LocationProps extends FlexibleContentProps {
 const Location: React.FC<LocationProps> = props => {
   return (
     <>
-      <h1>LOCATION</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>LOCATION</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

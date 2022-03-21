@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface SelectionProps extends FlexibleContentProps {
   selectionTitle?: string
@@ -34,8 +35,10 @@ export interface SelectionProps extends FlexibleContentProps {
 const Selection: React.FC<SelectionProps> = props => {
   return (
     <>
-      <h1>SELECTION</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>SELECTION</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface VideoProps extends FlexibleContentProps {
   videosTitle?: string
@@ -17,8 +18,10 @@ export interface VideoProps extends FlexibleContentProps {
 const Videos: React.FC<VideoProps> = props => {
   return (
     <>
-      <h1>VIDEOS</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>VIDEOS</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

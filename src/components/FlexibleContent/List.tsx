@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface ListProps extends FlexibleContentProps {
   listTitle?: string
@@ -17,8 +18,10 @@ export interface ListProps extends FlexibleContentProps {
 const List: React.FC<ListProps> = props => {
   return (
     <>
-      <h1>LIST</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>LIST</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

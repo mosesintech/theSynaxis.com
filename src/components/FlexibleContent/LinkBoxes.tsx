@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface LinkBoxesProps extends FlexibleContentProps {
   linkBoxesTitle?: string
@@ -17,8 +18,10 @@ export interface LinkBoxesProps extends FlexibleContentProps {
 const LinkBoxes: React.FC<LinkBoxesProps> = props => {
   return (
     <>
-      <h1>LINK BOXES</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>LINK BOXES</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

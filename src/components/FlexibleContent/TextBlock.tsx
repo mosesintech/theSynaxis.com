@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface TextBlockProps extends FlexibleContentProps {
   textBlockTitle?: string
@@ -17,8 +18,10 @@ export interface TextBlockProps extends FlexibleContentProps {
 const TextBlock: React.FC<TextBlockProps> = props => {
   return (
     <>
-      <h1>TEXT BLOCK</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>TEXT BLOCK</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

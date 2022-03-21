@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface LogosProps extends FlexibleContentProps {
   logosTitle?: string
@@ -17,8 +18,10 @@ export interface LogosProps extends FlexibleContentProps {
 const Logos: React.FC<LogosProps> = props => {
   return (
     <>
-      <h1>LOGOS</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>LOGOS</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

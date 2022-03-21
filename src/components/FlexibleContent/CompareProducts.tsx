@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface CompareProductsProps extends FlexibleContentProps {
   compareProductsTitle?: string
@@ -40,8 +41,10 @@ export interface CompareProductsProps extends FlexibleContentProps {
 const CompareProducts: React.FC<CompareProductsProps> = props => {
   return (
     <>
-      <h1>COMPARE PRODUCTS</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>COMPARE PRODUCTS</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

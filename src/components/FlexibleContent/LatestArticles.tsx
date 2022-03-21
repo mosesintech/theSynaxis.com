@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface LatestArticlesProps extends FlexibleContentProps {
   latestArticlesTitle?: string
@@ -39,9 +40,11 @@ const LatestArticles: React.FC<LatestArticlesProps> = props => {
   ) {
     return (
       <>
-        <h1>LATEST ARTICLES</h1>
-        <pre>{JSON.stringify(props, null, 2)}</pre>
-        <pre>{JSON.stringify(allPosts, null, 2)}</pre>
+        <Edges size="lg">
+          <h1>LATEST ARTICLES</h1>
+          <pre>{JSON.stringify(props, null, 2)}</pre>
+          <pre>{JSON.stringify(allPosts, null, 2)}</pre>
+        </Edges>
       </>
     )
   }

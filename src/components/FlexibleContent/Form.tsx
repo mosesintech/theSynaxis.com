@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface FormProps extends FlexibleContentProps {
   formTitle?: string
@@ -81,9 +82,11 @@ const Form: React.FC<FormProps> = props => {
 
   return (
     <>
-      <h1>FORM</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
-      <pre>{JSON.stringify(form, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>FORM</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+        <pre>{JSON.stringify(form, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

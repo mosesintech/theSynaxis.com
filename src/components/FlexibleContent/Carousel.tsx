@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface CarouselProps extends FlexibleContentProps {
   carouselTitle?: string
@@ -28,9 +29,11 @@ const Carousel: React.FC<CarouselProps> = props => {
 
   return (
     <>
-      <h1>CAROUSEL</h1>
-      <pre>{JSON.stringify(title, null, 2)}</pre>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>CAROUSEL</h1>
+        <pre>{JSON.stringify(title, null, 2)}</pre>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

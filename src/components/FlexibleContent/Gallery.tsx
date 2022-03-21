@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface GalleryProps extends FlexibleContentProps {
   galleryTitle?: string
@@ -17,8 +18,10 @@ export interface GalleryProps extends FlexibleContentProps {
 const Gallery: React.FC<GalleryProps> = props => {
   return (
     <>
-      <h1>GALLERY</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>GALLERY</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

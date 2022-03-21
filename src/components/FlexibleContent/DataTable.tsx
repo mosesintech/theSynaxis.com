@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface DataTableProps extends FlexibleContentProps {
   dataTableTitle?: string
@@ -19,8 +20,10 @@ export interface DataTableProps extends FlexibleContentProps {
 const DataTable: React.FC<DataTableProps> = props => {
   return (
     <>
-      <h1>DATA TABLE</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>DATA TABLE</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

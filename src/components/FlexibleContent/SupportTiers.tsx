@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface SupportTiersProps extends FlexibleContentProps {
   supportTiersTitle?: string
@@ -18,8 +19,10 @@ export interface SupportTiersProps extends FlexibleContentProps {
 const SupportTiers: React.FC<SupportTiersProps> = props => {
   return (
     <>
-      <h1>SUPPORT TIERS</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>SUPPORT TIERS</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface ThreeColumnsProps extends FlexibleContentProps {
   threeColumnsTitle?: string
@@ -48,8 +49,10 @@ export interface ThreeColumnsProps extends FlexibleContentProps {
 const ThreeColumns: React.FC<ThreeColumnsProps> = props => {
   return (
     <>
-      <h1>THREE COLUMNS</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>THREE COLUMNS</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }

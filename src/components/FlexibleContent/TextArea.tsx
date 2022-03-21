@@ -1,6 +1,7 @@
 import React from "react"
 
 import { FlexibleContentProps } from "../../interfaces"
+import Edges from "../Layout/Edges"
 
 export interface TextAreaProps extends FlexibleContentProps {
   textAreaTitle?: string
@@ -17,8 +18,10 @@ export interface TextAreaProps extends FlexibleContentProps {
 const TextArea: React.FC<TextAreaProps> = props => {
   return (
     <>
-      <h1>TEXT AREA</h1>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <Edges size="lg">
+        <h1>TEXT AREA</h1>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Edges>
     </>
   )
 }
