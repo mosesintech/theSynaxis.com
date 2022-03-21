@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import { TemplatePageProps } from "../../interfaces"
+import Layout from "../../components/Layout/Layout"
 import FlexibleContent from "../../components/FlexibleContent"
 
 const DefaultPageTemplate: React.FC<TemplatePageProps> = props => {
@@ -10,19 +11,21 @@ const DefaultPageTemplate: React.FC<TemplatePageProps> = props => {
       page: { title, uri, slug, template },
     },
   } = props
-
+ 
   return (
     <>
-      {!!template && (
-        <FlexibleContent
-          modules={template.flexibleContentModules.contentModule}
-          data={{
-            title,
-            uri,
-            slug,
-          }}
-        />
-      )}
+      <Layout>
+        {!!template && (
+          <FlexibleContent
+            modules={template.flexibleContentModules.contentModule}
+            data={{
+              title,
+              uri,
+              slug,
+            }}
+          />
+        )}
+      </Layout>
     </>
   )
 }

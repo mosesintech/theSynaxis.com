@@ -1,0 +1,48 @@
+@tailwind base; 
+@tailwind components; 
+@tailwind utilities;
+@font-face {
+  font-family: 'TriodPostnaja';
+  src: url("/fonts/TriodPostnaja") format("truetype");
+}
+@layer base {
+  h1 {
+    @apply uppercase text-h1 font-heading;
+  }
+  h2 {
+    @apply uppercase text-h2 font-heading text-black;
+  }
+  h3 {
+    @apply uppercase text-h3 font-heading font-bold;
+  }
+  h4 {
+    @apply uppercase text-h4 font-heading;
+  }
+  p {
+    @apply font-lato;
+  }
+  a {
+    @apply font-lato text-blue-900;
+  }
+  a:hover {
+    @apply font-lato text-blue-700 underline;
+  }
+  button.btn-primary {
+    @apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center;
+  }
+  button.btn-sm {
+    @apply py-2 px-3
+  }
+  button.btn-lg {
+    @apply px-6 py-3.5
+  }
+  button.btn-disabled {
+    @apply bg-blue-400 dark:bg-blue-500 cursor-not-allowed
+  }
+  button.btn-inverted {
+    @apply text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800;
+  }
+  button.btn-light {
+    @apply mx-auto w-[88px] py-[5px] rounded-[4px] border-2 border-gray text-gray700 text-pTable;
+  }
+}
