@@ -1,10 +1,10 @@
-import React from 'react';
-import DesktopMenu from './DesktopMenu';
+import React from "react"
+import DesktopMenu from "./DesktopMenu"
 
 export default function HeaderMenu() {
-    return (
-        <>
-            <DesktopMenu />
-        </>
-    )
+  return (
+    <>
+      <DesktopMenu />
+    </>
+  )
 }

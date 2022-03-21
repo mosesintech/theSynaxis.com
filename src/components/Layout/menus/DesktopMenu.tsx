@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
-import { Link } from 'gatsby'
-import Headroom from 'react-headroom';
-import { Popover, Transition } from '@headlessui/react'
+import React, { Fragment } from "react"
+import { Link } from "gatsby"
+import Headroom from "react-headroom"
+import { Popover, Transition } from "@headlessui/react"
 import {
   BookOpenIcon,
   ChatAltIcon,
@@ -10,36 +10,43 @@ import {
   PlayIcon,
   UserGroupIcon,
   XIcon,
-} from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+} from "@heroicons/react/outline"
+import { ChevronDownIcon } from "@heroicons/react/solid"
 
 const solutions = [
   {
-    name: 'Scripture Reader',
-    description: 'Read the Holy Bible in our elegant reader app. Holy Fathers commentary comming soon!',
-    href: 'https://app.thesynaxis.com/scripture',
+    name: "Scripture Reader",
+    description:
+      "Read the Holy Bible in our elegant reader app. Holy Fathers commentary comming soon!",
+    href: "https://app.thesynaxis.com/scripture",
     icon: BookOpenIcon,
   },
   {
-    name: 'The Sayings',
-    description: 'A powerful app that collects and presents the words of the Saints.',
-    href: 'https://app.thesynaxis.com/sayings',
+    name: "The Sayings",
+    description:
+      "A powerful app that collects and presents the words of the Saints.",
+    href: "https://app.thesynaxis.com/sayings",
     icon: ChatAltIcon,
   },
   {
-    name: 'The Synaxis',
-    description: 'A community app for the Orthodox to help each other along the path towards God.',
-    href: 'https://app.thesynaxis.com/synaxis',
+    name: "The Synaxis",
+    description:
+      "A community app for the Orthodox to help each other along the path towards God.",
+    href: "https://app.thesynaxis.com/synaxis",
     icon: UserGroupIcon,
   },
 ]
 const callsToAction = [
-  { name: 'Take The Tour', href: 'https://app.thesynaxis.com/tour', icon: PlayIcon },
-  { name: 'Contact Us', href: '/contact', icon: MailIcon },
+  {
+    name: "Take The Tour",
+    href: "https://app.thesynaxis.com/tour",
+    icon: PlayIcon,
+  },
+  { name: "Contact Us", href: "/contact", icon: MailIcon },
 ]
 
 function classNames(...classes: any) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ")
 }
 
 export default function DesktopMenu() {
@@ -52,14 +59,17 @@ export default function DesktopMenu() {
             <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
               <div className="flex justify-start items-center lg:w-0 lg:flex-1">
                 <Link to="/" className="h-8 w-auto sm:h-10">
-                    <img
-                      src='/images/synaxis.jpeg'
-                      alt="The Synaxis"
-                      height='50px'
-                      width="50px"
-                    />
+                  <img
+                    src="/images/synaxis.jpeg"
+                    alt="The Synaxis"
+                    height="50px"
+                    width="50px"
+                  />
                 </Link>
-                <Link to="/" className="px-5 text-black hover:text-black font-headingStyled hover:font-headingStyled cursor-pointer hover:no-underline">
+                <Link
+                  to="/"
+                  className="px-5 text-black hover:text-black font-headingStyled hover:font-headingStyled cursor-pointer hover:no-underline"
+                >
                   The Synaxis
                 </Link>
               </div>
@@ -75,15 +85,15 @@ export default function DesktopMenu() {
                     <>
                       <Popover.Button
                         className={classNames(
-                          open ? 'text-gray-900' : 'text-gray-500',
-                          'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                          open ? "text-gray-900" : "text-gray-500",
+                          "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         )}
                       >
                         <span>Apps</span>
                         <ChevronDownIcon
                           className={classNames(
-                            open ? 'text-gray-600' : 'text-gray-400',
-                            'ml-2 h-5 w-5 group-hover:text-gray-500'
+                            open ? "text-gray-600" : "text-gray-400",
+                            "ml-2 h-5 w-5 group-hover:text-gray-500"
                           )}
                           aria-hidden="true"
                         />
@@ -101,26 +111,39 @@ export default function DesktopMenu() {
                         <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                              {solutions.map((item) => (
+                              {solutions.map(item => (
                                 <Link
                                   key={item.name}
                                   to={item.href}
                                   className="p-3 flex items-start hover:no-underline rounded-lg hover:bg-gray-50"
                                 >
-                                    <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
-                                    <div className="ml-4">
-                                        <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                        <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                                    </div>
+                                  <item.icon
+                                    className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                    aria-hidden="true"
+                                  />
+                                  <div className="ml-4">
+                                    <p className="text-base font-medium text-gray-900">
+                                      {item.name}
+                                    </p>
+                                    <p className="mt-1 text-sm text-gray-500">
+                                      {item.description}
+                                    </p>
+                                  </div>
                                 </Link>
                               ))}
                             </div>
                             <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
-                              {callsToAction.map((item) => (
+                              {callsToAction.map(item => (
                                 <div key={item.name} className="flow-root">
-                                  <Link to={item.href} className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
-                                      <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                      <span className="ml-3">{item.name}</span>
+                                  <Link
+                                    to={item.href}
+                                    className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
+                                  >
+                                    <item.icon
+                                      className="flex-shrink-0 h-6 w-6 text-gray-400"
+                                      aria-hidden="true"
+                                    />
+                                    <span className="ml-3">{item.name}</span>
                                   </Link>
                                 </div>
                               ))}
@@ -131,19 +154,35 @@ export default function DesktopMenu() {
                     </>
                   )}
                 </Popover>
-                
-                <Link to="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">About</Link>
 
-                <Link to="/news" className="text-base font-medium text-gray-500 hover:text-gray-900">News</Link>
-               
+                <Link
+                  to="/about"
+                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                >
+                  About
+                </Link>
+
+                <Link
+                  to="/news"
+                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                >
+                  News
+                </Link>
               </Popover.Group>
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                <a href="https://app.thesynaxis.com/login" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900" data-modal-toggle="authentication-modal">
+                <a
+                  href="https://app.thesynaxis.com/login"
+                  className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
+                  data-modal-toggle="authentication-modal"
+                >
                   Sign in
                 </a>
-                
-                <a href="https://app.thesynaxis.com/register" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 hover:no-underline">
-                    Sign up
+
+                <a
+                  href="https://app.thesynaxis.com/register"
+                  className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 hover:no-underline"
+                >
+                  Sign up
                 </a>
               </div>
             </div>
@@ -158,7 +197,10 @@ export default function DesktopMenu() {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+            <Popover.Panel
+              focus
+              className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+            >
               <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5">
                   <div className="flex items-center justify-between">
@@ -178,14 +220,19 @@ export default function DesktopMenu() {
                   </div>
                   <div className="mt-6">
                     <nav className="grid gap-y-8">
-                      {solutions.map((item) => (
+                      {solutions.map(item => (
                         <Link
                           key={item.name}
                           to={item.href}
                           className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                         >
-                          <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
-                          <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
+                          <item.icon
+                            className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                            aria-hidden="true"
+                          />
+                          <span className="ml-3 text-base font-medium text-gray-900">
+                            {item.name}
+                          </span>
                         </Link>
                       ))}
                     </nav>
@@ -193,11 +240,17 @@ export default function DesktopMenu() {
                 </div>
                 <div className="py-6 px-5 space-y-6">
                   <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                    <Link to="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    <Link
+                      to="#"
+                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                    >
                       Pricing
                     </Link>
 
-                    <Link to="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    <Link
+                      to="#"
+                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                    >
                       Docs
                     </Link>
                   </div>
@@ -209,8 +262,11 @@ export default function DesktopMenu() {
                       Sign up
                     </Link>
                     <p className="mt-6 text-center text-base font-medium text-gray-500">
-                      Existing customer?{' '}
-                      <Link to="#" className="text-indigo-600 hover:text-indigo-500">
+                      Existing customer?{" "}
+                      <Link
+                        to="#"
+                        className="text-indigo-600 hover:text-indigo-500"
+                      >
                         Sign in
                       </Link>
                     </p>

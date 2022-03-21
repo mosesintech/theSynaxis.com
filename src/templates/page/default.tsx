@@ -11,7 +11,7 @@ const DefaultPageTemplate: React.FC<TemplatePageProps> = props => {
       page: { title, uri, slug, template },
     },
   } = props
- 
+
   return (
     <>
       <Layout>
