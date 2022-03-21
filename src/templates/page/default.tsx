@@ -14,7 +14,7 @@ const DefaultPageTemplate: React.FC<TemplatePageProps> = props => {
 
   return (
     <>
-      <Layout>
+      <Layout title={title}>
         {!!template && (
           <FlexibleContent
             modules={template.flexibleContentModules.contentModule}
