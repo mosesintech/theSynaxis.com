@@ -9,11 +9,10 @@ import {
   MenuIcon,
   PlayIcon,
   UserGroupIcon,
-  XIcon,
 } from "@heroicons/react/outline"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 
-import MobileMenu from './MobileMenu'
+import MobileMenu from "./MobileMenu"
 
 const solutions = [
   {
