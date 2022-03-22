@@ -3,7 +3,6 @@ import * as React from "react"
 import Layout from "../components/Layout/Layout"
 import Edges from "../components/Layout/Edges"
 
-
 const NotFoundPage = () => (
   <Layout title="404: Not found">
     <Edges size="lg">

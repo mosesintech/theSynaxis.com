@@ -3,12 +3,12 @@ import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
 interface SeoProps {
-  title?: string,
-  description?: string,
+  title?: string
+  description?: string
 }
 
-const Seo: React.FC<SeoProps> = (props) => {
-  const { title, description } = props;
+const Seo: React.FC<SeoProps> = props => {
+  const { title, description } = props
 
   return (
     <StaticQuery
@@ -34,7 +34,10 @@ const Seo: React.FC<SeoProps> = (props) => {
 
         return (
           <>
-            <Helmet title={`The Synaxis | ${seo.title}`} titleTemplate={titleTemplate}>
+            <Helmet
+              title={`The Synaxis | ${seo.title}`}
+              titleTemplate={titleTemplate}
+            >
               <meta name="description" content={seo.description} />
             </Helmet>
           </>
