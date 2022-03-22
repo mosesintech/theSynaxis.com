@@ -3,7 +3,7 @@
 @tailwind utilities;
 @font-face {
   font-family: 'TriodPostnaja';
-  src: url("/fonts/TriodPostnaja") format("truetype");
+  src: url("/fonts/TriodPostNaja/TriodPostnaja-0G4z.ttf") format("truetype");
 }
 @layer base {
   h1 {
