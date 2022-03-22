@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+ 
 export default function FooterMenu() {
   return (
     <>
@@ -30,7 +30,7 @@ export default function FooterMenu() {
               </li>
               <li className="mb-4">
                 <a
-                  href="https://app.thesynaxis.com/tour"
+                  href="https://synaxisapp.netlify.app/tour"
                   className="hover:underline"
                 >
                   Tour
@@ -45,7 +45,7 @@ export default function FooterMenu() {
             <ul className="text-gray-600 dark:text-gray-400">
               <li className="mb-4">
                 <a
-                  href="https://app.thesynaxis.com/scripture"
+                  href="https://synaxisapp.netlify.app/scripture"
                   className="hover:underline"
                 >
                   Scripture
@@ -53,7 +53,7 @@ export default function FooterMenu() {
               </li>
               <li className="mb-4">
                 <a
-                  href="https://app.thesynaxis.com/sayings"
+                  href="https://synaxisapp.netlify.app/sayings"
                   className="hover:underline"
                 >
                   The Sayings
@@ -61,7 +61,7 @@ export default function FooterMenu() {
               </li>
               <li className="mb-4">
                 <a
-                  href="https://app.thesynaxis.com/synaxis"
+                  href="https://synaxisapp.netlify.app/synaxis"
                   className="hover:underline"
                 >
                   The Synaxis

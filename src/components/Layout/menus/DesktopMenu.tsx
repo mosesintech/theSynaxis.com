@@ -18,28 +18,28 @@ const solutions = [
     name: "Scripture Reader",
     description:
       "Read the Holy Bible in our elegant reader app. Holy Fathers commentary comming soon!",
-    href: "https://app.thesynaxis.com/scripture",
+    href: "https://synaxisapp.netlify.app/scripture",
     icon: BookOpenIcon,
   },
   {
     name: "The Sayings",
     description:
       "A powerful app that collects and presents the words of the Saints.",
-    href: "https://app.thesynaxis.com/sayings",
+    href: "https://synaxisapp.netlify.app/sayings",
     icon: ChatAltIcon,
   },
   {
     name: "The Synaxis",
     description:
       "A community app for the Orthodox to help each other along the path towards God.",
-    href: "https://app.thesynaxis.com/synaxis",
+    href: "https://synaxisapp.netlify.app/synaxis",
     icon: UserGroupIcon,
   },
 ]
 const callsToAction = [
   {
     name: "Take The Tour",
-    href: "https://app.thesynaxis.com/tour",
+    href: "https://synaxisapp.netlify.app/tour",
     icon: PlayIcon,
   },
   { name: "Contact Us", href: "/contact", icon: MailIcon },
@@ -169,7 +169,7 @@ export default function DesktopMenu() {
             </Popover.Group>
             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
               <a
-                href="https://app.thesynaxis.com/login"
+                href="https://synaxisapp.netlify.app/login"
                 className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
                 data-modal-toggle="authentication-modal"
               >
@@ -177,7 +177,7 @@ export default function DesktopMenu() {
               </a>
 
               <a
-                href="https://app.thesynaxis.com/register"
+                href="https://synaxisapp.netlify.app/register"
                 className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 hover:no-underline"
               >
                 Sign up
