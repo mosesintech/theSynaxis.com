@@ -4,7 +4,7 @@ import Seo from "../Seo"
 import Header from "./Header"
 import Footer from "./Footer"
 import Breadcrumbs from "./Breadcrumbs"
-import CookieBanner from '../CookieConsent';
+import CookieBanner from "../CookieConsent"
 import "../../styles/index.css"
 
 interface LayoutProps {
