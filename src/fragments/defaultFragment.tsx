@@ -269,7 +269,10 @@ export const defaultFragment = graphql`
               altText
               localFile {
                 childImageSharp {
-                  gatsbyImageData(transformOptions: {cropFocus: SOUTH}, placeholder: BLURRED)
+                  gatsbyImageData(
+                    transformOptions: { cropFocus: SOUTH }
+                    placeholder: BLURRED
+                  )
                 }
               }
             }

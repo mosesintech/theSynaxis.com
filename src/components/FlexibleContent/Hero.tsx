@@ -36,9 +36,7 @@ const Hero: React.FC<HeroProps> = props => {
             <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
               <div className="text-center">
                 <h1 className="text-4xl tracking-tight font-extrabold font-headingStyled text-gray-900 sm:text-5xl md:text-6xl">
-                  {heroTitle && (
-                    <span className="block">{heroTitle}</span>
-                  )}
+                  {heroTitle && <span className="block">{heroTitle}</span>}
                   {heroSubtitle && (
                     <span className="block text-indigo-600">
                       {heroSubtitle}
