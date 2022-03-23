@@ -8,7 +8,7 @@ import CookieBanner from "../CookieConsent"
 import "../../styles/index.css"
 
 interface LayoutProps {
-  children: any
+  children: React.ReactNode
   title?: string
 }
 

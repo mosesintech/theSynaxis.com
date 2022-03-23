@@ -1,6 +1,13 @@
 import React from "react"
 
-const Edges = (props: any) => {
+interface EdgesProps {
+  children: React.ReactNode
+  size: "sm" | "md" | "hr" | "lg"
+  fullWidth?: boolean
+  [x: string]: any
+}
+
+const Edges = (props: EdgesProps) => {
   const { size, fullWidth, sx, ...rest } = props
 
   return (

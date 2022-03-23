@@ -6,7 +6,7 @@ import Edges from "../Layout/Edges"
 export interface TextImageProps extends FlexibleContentProps {
   textImageTitle?: string
   textImageText?: string
-  textImagePosition?: string // Should also have Right/Left options
+  textImagePosition?: string
   textImageBackgroundColor?: string
   textImageButton?: {
     target?: string
@@ -26,5 +26,7 @@ const TextImage: React.FC<TextImageProps> = props => {
     </>
   )
 }
+
+// Tailwind Component: Content: Two columns with image; for left/right image options
 
 export default TextImage

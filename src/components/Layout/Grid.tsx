@@ -7,7 +7,7 @@ export default function Grid(props: any) {
     <div
       className={`grid sm:grid-cols-${smColumns || 2} md:grid-cols-${
         mdColumns || 3
-      } lg:grid-cols-${lgColumns || 4} gap-${gap}`}
+      } lg:grid-cols-${lgColumns || 4} gap-${gap} mt-12`}
     >
       {children}
     </div>

@@ -37,10 +37,10 @@ const Hero: React.FC<HeroProps> = props => {
               <div className="text-center">
                 <h1 className="text-4xl tracking-tight font-extrabold font-headingStyled text-gray-900 sm:text-5xl md:text-6xl">
                   {heroTitle && (
-                    <span className="block xl:inline">{heroTitle}</span>
+                    <span className="block">{heroTitle}</span>
                   )}
                   {heroSubtitle && (
-                    <span className="block text-indigo-600 xl:inline">
+                    <span className="block text-indigo-600">
                       {heroSubtitle}
                     </span>
                   )}
