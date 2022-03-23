@@ -213,6 +213,7 @@ export const defaultFragment = graphql`
         ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Hero {
           fieldGroupName
           heroTitle
+          heroSubtitle
           heroText
           heroBackgroundColor
           heroBackgroundVideo
@@ -225,6 +226,11 @@ export const defaultFragment = graphql`
             }
           }
           heroButton {
+            target
+            title
+            url
+          }
+          heroSecondaryButton {
             target
             title
             url
