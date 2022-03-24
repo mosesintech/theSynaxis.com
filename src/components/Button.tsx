@@ -18,7 +18,7 @@ function Button(props: any) {
     <>
       {link ? (
         <>
-          <Link to={link}>
+          <Link to={link} className="hover:no-underline">
             <button
               disabled={loading || disabled}
               type="button"
