@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -28,3 +29,28 @@ const SupportTiers: React.FC<SupportTiersProps> = props => {
 }
 
 export default SupportTiers
+
+export const fragment = graphql`
+  fragment SupportTiers on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_SupportTiers {
+      fieldGroupName
+      supportTiersTitle
+      supportTiersText
+      supportTiersBackgroundColor
+      supportTiersButton {
+        target
+        title
+        url
+      }
+      supportTiersCategories {
+        category
+      }
+      supportTiersFeatures {
+        featureTitle
+        featureSupport {
+          supported
+        }
+      }
+    }
+  }
+`

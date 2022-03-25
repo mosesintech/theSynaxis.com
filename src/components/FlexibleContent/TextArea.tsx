@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -27,3 +28,23 @@ const TextArea: React.FC<TextAreaProps> = props => {
 }
 
 export default TextArea
+
+export const fragment = graphql`
+  fragment TextArea on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_TextArea {
+      fieldGroupName
+      textAreaTitle
+      textAreaText
+      textAreaBackgroundColor
+      textAreaButton {
+        target
+        title
+        url
+      }
+      textArea {
+        title
+        text
+      }
+    }
+  }
+`

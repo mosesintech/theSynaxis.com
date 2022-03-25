@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -27,3 +28,22 @@ const Logos: React.FC<LogosProps> = props => {
 }
 
 export default Logos
+
+export const fragment = graphql`
+  fragment Logos on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Logos {
+      fieldGroupName
+      logosTitle
+      logosText
+      logosBackgroundColor
+      logosButton {
+        target
+        title
+        url
+      }
+      logos {
+        altText
+      }
+    }
+  }
+`

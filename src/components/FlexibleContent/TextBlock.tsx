@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -27,3 +28,20 @@ const TextBlock: React.FC<TextBlockProps> = props => {
 }
 
 export default TextBlock
+
+export const fragment = graphql`
+  fragment TextBlock on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_TextBlock {
+      fieldGroupName
+      textBlockTitle
+      textBlockText
+      textBlockLocation
+      textBlockBackgroundColor
+      textBlockButton {
+        target
+        title
+        url
+      }
+    }
+  }
+`

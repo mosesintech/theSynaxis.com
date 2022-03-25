@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -30,3 +31,23 @@ const Location: React.FC<LocationProps> = props => {
 }
 
 export default Location
+
+export const fragment = graphql`
+  fragment Location on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Location {
+      fieldGroupName
+      locationTitle
+      locationText
+      locationBackgroundColor
+      locationButton {
+        target
+        title
+        url
+      }
+      locationMap
+      locationAddress
+      locationPhone
+      locationHours
+    }
+  }
+`

@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -58,3 +59,36 @@ const ThreeColumns: React.FC<ThreeColumnsProps> = props => {
 }
 
 export default ThreeColumns
+
+export const fragment = graphql`
+  fragment ThreeColumns on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_ThreeColumns {
+      fieldGroupName
+      threeColumnsTitle
+      threeColumnsText
+      threeColumnsBackgroundColor
+      threeColumnsButton {
+        target
+        title
+        url
+      }
+      columns {
+        title
+        text
+        link {
+          target
+          title
+          url
+        }
+        image {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
+`

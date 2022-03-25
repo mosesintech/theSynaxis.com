@@ -23,14 +23,14 @@ function Button(props: any) {
               disabled={loading || disabled}
               type="button"
               className={`
-                        ${inverted ? "btn-inverted" : "btn-primary "}
                         ${disabled ? "btn-disabled" : ""}
+                        ${inverted ? "btn-inverted" : "btn-primary "}
                         ${pill ? "rounded-full" : "rounded-lg"}
                         ${
                           size === "sm"
-                            ? "btn-sm"
+                            ? `btn-sm${inverted ? "-inverted" : ""}`
                             : size === "lg"
-                            ? "btn-lg"
+                            ? `btn-lg${inverted ? "-inverted" : ""}`
                             : ""
                         }
                     `}

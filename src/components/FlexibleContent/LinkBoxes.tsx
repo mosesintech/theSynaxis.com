@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import { FlexibleContentProps } from "../../interfaces"
@@ -115,3 +116,39 @@ const LinkBoxes: React.FC<LinkBoxesProps> = props => {
 }
 
 export default LinkBoxes
+
+export const fragment = graphql`
+  fragment LinkBoxes on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_LinkBoxes {
+      fieldGroupName
+      linkBoxesTitle
+      linkBoxesText
+      linkBoxesBackgroundColor
+      linkBoxesButton {
+        target
+        title
+        url
+      }
+      linkBoxes {
+        title
+        text
+        image {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                transformOptions: { cropFocus: SOUTH }
+                placeholder: BLURRED
+              )
+            }
+          }
+        }
+        button {
+          target
+          title
+          url
+        }
+      }
+    }
+  }
+`

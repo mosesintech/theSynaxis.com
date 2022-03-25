@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -37,3 +38,19 @@ const Banner: React.FC<BannerProps> = props => {
 }
 
 export default Banner
+
+export const fragment = graphql`
+  fragment Banner on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Banner {
+      fieldGroupName
+      bannerTitle
+      bannerContent
+      bannerBackgroundColor
+      bannerLink {
+        target
+        title
+        url
+      }
+    }
+  }
+`

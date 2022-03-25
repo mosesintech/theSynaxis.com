@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -29,3 +30,27 @@ const DataTable: React.FC<DataTableProps> = props => {
 }
 
 export default DataTable
+
+export const fragment = graphql`
+  fragment DataTable on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_DataTable {
+      fieldGroupName
+      dataTableTitle
+      dataTableText
+      dataTableBackgroundColor
+      dataTableButton {
+        target
+        title
+        url
+      }
+      dataTable {
+        columns {
+          heading
+          row {
+            item
+          }
+        }
+      }
+    }
+  }
+`

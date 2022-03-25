@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -81,3 +81,37 @@ const Hero: React.FC<HeroProps> = props => {
 }
 
 export default Hero
+
+export const fragment = graphql`
+  fragment Hero on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Hero {
+      fieldGroupName
+      heroTitle
+      heroSubtitle
+      heroText
+      heroBackgroundColor
+      heroBackgroundVideo
+      heroBackgroundImage {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      heroButton {
+        target
+        title
+        url
+      }
+      heroSecondaryButton {
+        target
+        title
+        url
+      }
+      heroGallery {
+        altText
+      }
+    }
+  }
+`

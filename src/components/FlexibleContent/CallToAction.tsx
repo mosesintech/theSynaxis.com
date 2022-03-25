@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -39,3 +40,20 @@ const CallToAction: React.FC<CTAProps> = props => {
 }
 
 export default CallToAction
+
+export const fragment = graphql`
+  fragment CallToAction on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_CallToAction {
+      fieldGroupName
+      ctaTitle
+      ctaContent
+      ctaPhoneNumber
+      ctaBackgroundColor
+      ctaButton {
+        target
+        title
+        url
+      }
+    }
+  }
+`

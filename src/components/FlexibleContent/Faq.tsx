@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -27,3 +28,23 @@ const Faq: React.FC<FaqProps> = props => {
 }
 
 export default Faq
+
+export const fragment = graphql`
+  fragment Faq on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Faq {
+      fieldGroupName
+      faqTitle
+      faqText
+      faqBackgroundColor
+      faqButton {
+        target
+        title
+        url
+      }
+      faq {
+        question
+        answer
+      }
+    }
+  }
+`

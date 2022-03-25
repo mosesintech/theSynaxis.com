@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -39,3 +40,36 @@ const Carousel: React.FC<CarouselProps> = props => {
 }
 
 export default Carousel
+
+export const fragment = graphql`
+  fragment Carousel on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Carousel {
+      fieldGroupName
+      carouselTitle
+      carouselText
+      carouselBackgroundColor
+      carouselCard {
+        title
+        text
+        link {
+          target
+          title
+          url
+        }
+        image {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+      carouselButton {
+        target
+        title
+        url
+      }
+    }
+  }
+`

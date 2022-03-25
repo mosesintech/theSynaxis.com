@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -27,3 +28,23 @@ const List: React.FC<ListProps> = props => {
 }
 
 export default List
+
+export const fragment = graphql`
+  fragment List on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_List {
+      fieldGroupName
+      listTitle
+      listText
+      listBackgroundColor
+      listButton {
+        target
+        title
+        url
+      }
+      list {
+        title
+        text
+      }
+    }
+  }
+`

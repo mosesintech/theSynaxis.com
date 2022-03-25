@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -27,3 +28,23 @@ const Videos: React.FC<VideoProps> = props => {
 }
 
 export default Videos
+
+export const fragment = graphql`
+  fragment Videos on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Videos {
+      fieldGroupName
+      videosTitle
+      videosText
+      videosBackgroundColor
+      videosButton {
+        target
+        title
+        url
+      }
+      videos {
+        videoEmbedLink
+        text
+      }
+    }
+  }
+`

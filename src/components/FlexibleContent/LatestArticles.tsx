@@ -58,3 +58,21 @@ const LatestArticles: React.FC<LatestArticlesProps> = props => {
 }
 
 export default LatestArticles
+
+export const fragment = graphql`
+  fragment LatestArticles on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_LatestArticles {
+      fieldGroupName
+      latestArticlesTitle
+      latestArticlesText
+      latestArticlesPostType
+      latestArticlesPostLimit
+      latestArticlesBackgroundColor
+      latestArticlesButton {
+        target
+        title
+        url
+      }
+    }
+  }
+`

@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -22,3 +23,23 @@ const Switch: React.FC<SwitchProps> = props => {
 }
 
 export default Switch
+
+export const fragment = graphql`
+  fragment Switch on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Switch {
+      fieldGroupName
+      switchTitle
+      switchText
+      switchBackgroundColor
+      switchOptions {
+        title
+        text
+        link {
+          target
+          title
+          url
+        }
+      }
+    }
+  }
+`

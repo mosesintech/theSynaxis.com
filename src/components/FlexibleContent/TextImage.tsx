@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -30,3 +31,28 @@ const TextImage: React.FC<TextImageProps> = props => {
 // Tailwind Component: Content: Two columns with image; for left/right image options
 
 export default TextImage
+
+export const fragment = graphql`
+  fragment TextImage on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_TextImage {
+      fieldGroupName
+      textImageTitle
+      textImageText
+      textImagePosition
+      textImageBackgroundColor
+      textImageButton {
+        target
+        title
+        url
+      }
+      textImage {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
+`

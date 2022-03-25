@@ -92,3 +92,15 @@ const Form: React.FC<FormProps> = props => {
 }
 
 export default Form
+
+export const fragment = graphql`
+  fragment Form on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_Form {
+      fieldGroupName
+      formTitle
+      formText
+      formBackgroundColor
+      formId
+    }
+  }
+`

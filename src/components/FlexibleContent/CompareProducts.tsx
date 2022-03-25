@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -50,3 +51,74 @@ const CompareProducts: React.FC<CompareProductsProps> = props => {
 }
 
 export default CompareProducts
+
+export const fragment = graphql`
+  fragment CompareProducts on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
+    ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_CompareProducts {
+      fieldGroupName
+      compareProductsTitle
+      compareProductsBackgroundColor
+      switchTitle
+      switchText
+      switchBackgroundColor
+      switchOptions {
+        title
+        text
+        link {
+          target
+          title
+          url
+        }
+      }
+      selectionTitle
+      selectionText
+      selectionBackgroundColor
+      selectionOptions {
+        optionCards {
+          optionOne {
+            title
+            text
+            link {
+              target
+              title
+              url
+            }
+            image {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+          optionTwo {
+            title
+            text
+            link {
+              target
+              title
+              url
+            }
+            image {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+          optionImage {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
