@@ -1,5 +1,5 @@
 import { graphql } from "gatsby"
- 
+
 export const contactFragment = graphql`
   fragment ContactTemplateFragment on WpTemplate_Contact {
     templateName
