@@ -56,4 +56,19 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactCallToAction on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_CallToAction {
+      fieldGroupName
+      ctaTitle
+      ctaContent
+      ctaPhoneNumber
+      ctaBackgroundColor
+      ctaButton {
+        target
+        title
+        url
+      }
+    }
+  }
 `

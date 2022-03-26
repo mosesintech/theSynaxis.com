@@ -42,4 +42,22 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactSwitch on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Switch {
+      fieldGroupName
+      switchTitle
+      switchText
+      switchBackgroundColor
+      switchOptions {
+        title
+        text
+        link {
+          target
+          title
+          url
+        }
+      }
+    }
+  }
 `

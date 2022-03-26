@@ -21,7 +21,7 @@ type LinkBox = {
   }
 }
 
-interface LinkBoxesProps extends FlexibleContentProps {
+export interface LinkBoxesProps extends FlexibleContentProps {
   linkBoxesTitle?: string
   linkBoxesText?: string
   linkBoxesBackgroundColor?: string
@@ -120,6 +120,40 @@ export default LinkBoxes
 export const fragment = graphql`
   fragment LinkBoxes on WpDefaultTemplate_Flexiblecontentmodules_ContentModule {
     ... on WpDefaultTemplate_Flexiblecontentmodules_ContentModule_LinkBoxes {
+      fieldGroupName
+      linkBoxesTitle
+      linkBoxesText
+      linkBoxesBackgroundColor
+      linkBoxesButton {
+        target
+        title
+        url
+      }
+      linkBoxes {
+        title
+        text
+        image {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                transformOptions: { cropFocus: SOUTH }
+                placeholder: BLURRED
+              )
+            }
+          }
+        }
+        button {
+          target
+          title
+          url
+        }
+      }
+    }
+  }
+
+  fragment contactLinkBoxes on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_LinkBoxes {
       fieldGroupName
       linkBoxesTitle
       linkBoxesText

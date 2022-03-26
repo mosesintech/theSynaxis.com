@@ -75,4 +75,20 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactLatestArticles on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_LatestArticles {
+      fieldGroupName
+      latestArticlesTitle
+      latestArticlesText
+      latestArticlesPostType
+      latestArticlesPostLimit
+      latestArticlesBackgroundColor
+      latestArticlesButton {
+        target
+        title
+        url
+      }
+    }
+  }
 `

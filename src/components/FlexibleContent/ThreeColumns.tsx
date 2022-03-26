@@ -91,4 +91,35 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactThreeColumns on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_ThreeColumns {
+      fieldGroupName
+      threeColumnsTitle
+      threeColumnsText
+      threeColumnsBackgroundColor
+      threeColumnsButton {
+        target
+        title
+        url
+      }
+      columns {
+        title
+        text
+        link {
+          target
+          title
+          url
+        }
+        image {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
 `

@@ -50,4 +50,22 @@ export const fragment = graphql`
       locationHours
     }
   }
+
+  fragment contactLocation on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Location {
+      fieldGroupName
+      locationTitle
+      locationText
+      locationBackgroundColor
+      locationButton {
+        target
+        title
+        url
+      }
+      locationMap
+      locationAddress
+      locationPhone
+      locationHours
+    }
+  }
 `

@@ -48,6 +48,5 @@ export const PostFragment = graphql`
         description
       }
     }
-    content
   }
 `

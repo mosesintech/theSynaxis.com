@@ -50,4 +50,25 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactNavBlock on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_NavBlock {
+      fieldGroupName
+      navBlockTitle
+      navBlockText
+      navBlockBackgroundColor
+      navBlockButton {
+        target
+        title
+        url
+      }
+      navBlockLinks {
+        link {
+          target
+          title
+          url
+        }
+      }
+    }
+  }
 `

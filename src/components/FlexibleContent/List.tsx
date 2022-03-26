@@ -47,4 +47,22 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactList on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_List {
+      fieldGroupName
+      listTitle
+      listText
+      listBackgroundColor
+      listButton {
+        target
+        title
+        url
+      }
+      list {
+        title
+        text
+      }
+    }
+  }
 `

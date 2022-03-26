@@ -114,4 +114,36 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactHero on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Hero {
+      fieldGroupName
+      heroTitle
+      heroSubtitle
+      heroText
+      heroBackgroundColor
+      heroBackgroundVideo
+      heroBackgroundImage {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      heroButton {
+        target
+        title
+        url
+      }
+      heroSecondaryButton {
+        target
+        title
+        url
+      }
+      heroGallery {
+        altText
+      }
+    }
+  }
 `

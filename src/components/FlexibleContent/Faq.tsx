@@ -47,4 +47,22 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactFaq on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Faq {
+      fieldGroupName
+      faqTitle
+      faqText
+      faqBackgroundColor
+      faqButton {
+        target
+        title
+        url
+      }
+      faq {
+        question
+        answer
+      }
+    }
+  }
 `

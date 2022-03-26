@@ -60,4 +60,35 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactFeatureLinks on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_FeatureLinks {
+      fieldGroupName
+      featureLinksTitle
+      featureLinksText
+      featureLinksBackgroundColor
+      featureLinksButton {
+        target
+        title
+        url
+      }
+      featureLinks {
+        title
+        text
+        image {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+        button {
+          target
+          title
+          url
+        }
+      }
+    }
+  }
 `

@@ -101,4 +101,59 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactSelection on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Selection {
+      fieldGroupName
+      selectionTitle
+      selectionText
+      selectionBackgroundColor
+      selectionOptions {
+        optionCards {
+          optionOne {
+            title
+            text
+            link {
+              target
+              title
+              url
+            }
+            image {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+          optionTwo {
+            title
+            text
+            link {
+              target
+              title
+              url
+            }
+            image {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+          optionImage {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 `

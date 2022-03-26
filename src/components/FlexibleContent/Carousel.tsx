@@ -72,4 +72,35 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactCarousel on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Carousel {
+      fieldGroupName
+      carouselTitle
+      carouselText
+      carouselBackgroundColor
+      carouselCard {
+        title
+        text
+        link {
+          target
+          title
+          url
+        }
+        image {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+      carouselButton {
+        target
+        title
+        url
+      }
+    }
+  }
 `

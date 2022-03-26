@@ -103,4 +103,14 @@ export const fragment = graphql`
       formId
     }
   }
+
+  fragment contactForm on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Form {
+      fieldGroupName
+      formTitle
+      formText
+      formBackgroundColor
+      formId
+    }
+  }
 `

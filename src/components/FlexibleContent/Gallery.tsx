@@ -51,4 +51,26 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactGallery on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_Gallery {
+      fieldGroupName
+      galleryTitle
+      galleryText
+      galleryBackgroundColor
+      galleryButton {
+        target
+        title
+        url
+      }
+      imageGallery {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
 `

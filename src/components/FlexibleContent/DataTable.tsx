@@ -53,4 +53,26 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactDataTable on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_DataTable {
+      fieldGroupName
+      dataTableTitle
+      dataTableText
+      dataTableBackgroundColor
+      dataTableButton {
+        target
+        title
+        url
+      }
+      dataTable {
+        columns {
+          heading
+          row {
+            item
+          }
+        }
+      }
+    }
+  }
 `

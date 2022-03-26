@@ -53,4 +53,27 @@ export const fragment = graphql`
       }
     }
   }
+
+  fragment contactSupportTiers on WpTemplate_Contact_Flexiblecontentmodules_ContentModule {
+    ... on WpTemplate_Contact_Flexiblecontentmodules_ContentModule_SupportTiers {
+      fieldGroupName
+      supportTiersTitle
+      supportTiersText
+      supportTiersBackgroundColor
+      supportTiersButton {
+        target
+        title
+        url
+      }
+      supportTiersCategories {
+        category
+      }
+      supportTiersFeatures {
+        featureTitle
+        featureSupport {
+          supported
+        }
+      }
+    }
+  }
 `
