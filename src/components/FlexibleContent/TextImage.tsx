@@ -442,7 +442,7 @@ export const fragment = graphql`
         altText
         localFile {
           childImageSharp {
-            gatsbyImageData(width: 1184, height: 1376)
+            gatsbyImageData(width: 1184, height: 1376, placeholder: BLURRED)
           }
         }
       }
@@ -450,7 +450,7 @@ export const fragment = graphql`
         altText
         localFile {
           childImageSharp {
-            gatsbyImageData(width: 1310, height: 873)
+            gatsbyImageData(width: 1310, height: 873, placeholder: BLURRED)
           }
         }
       }
@@ -473,7 +473,15 @@ export const fragment = graphql`
         altText
         localFile {
           childImageSharp {
-            gatsbyImageData(width: 1184, height: 1376)
+            gatsbyImageData(width: 1184, height: 1376, placeholder: BLURRED)
+          }
+        }
+      }
+      altImage: textImage {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData(width: 1310, height: 873, placeholder: BLURRED)
           }
         }
       }
