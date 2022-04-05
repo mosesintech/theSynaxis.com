@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
 import Parser from "html-react-parser"
-import sanitizeHtml from "sanitize-html"
+// import sanitizeHtml from "sanitize-html"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
@@ -125,9 +125,7 @@ const TextImage: React.FC<TextImageProps> = props => {
                   </div>
                   <div className="relative md:row-start-1 md:col-start-2">
                     <div className="mt-8 md:mt-0">
-                      <div>
-                        {textImageText && Parser(sanitizeHtml(textImageText))}
-                      </div>
+                      <div>{textImageText && Parser(textImageText)}</div>
 
                       {textImageButton && (
                         <div className="mt-6">
@@ -216,9 +214,7 @@ const TextImage: React.FC<TextImageProps> = props => {
                     </div>
                   </div>
                   <div className="mt-8 md:mt-0">
-                    <div>
-                      {textImageText && Parser(sanitizeHtml(textImageText))}
-                    </div>
+                    <div>{textImageText && Parser(textImageText)}</div>
 
                     {textImageButton && (
                       <div className="mt-6">
@@ -385,9 +381,7 @@ const TextImage: React.FC<TextImageProps> = props => {
                   )}
                 </div>
                 <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
-                  <div>
-                    {textImageText && Parser(sanitizeHtml(textImageText))}
-                  </div>
+                  <div>{textImageText && Parser(textImageText)}</div>
 
                   {textImageButton && (
                     <div className="mt-6">
