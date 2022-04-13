@@ -1,7 +1,7 @@
 import fetch from "cross-fetch"
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client"
 
-const graphqlHost = process.env.REACT_APP_WPGRAPHQL_URL
+const graphqlHost = `${process.env.REACT_APP_WPGRAPHQL_URL}`
 
 export const link = createHttpLink({
   uri: graphqlHost,
