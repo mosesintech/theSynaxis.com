@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.WPGRAPHQL_URL,
+        url: process.env.GATSBY_WPGRAPHQL_URL,
       },
     },
     `gatsby-theme-headless-wordpress`,
