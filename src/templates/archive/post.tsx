@@ -1,37 +1,163 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
+import Parser from "html-react-parser"
 
 import Layout from "../../components/Layout/Layout"
 import Edges from "../../components/Layout/Edges"
 
+interface ArticleItem {
+  title: string
+  excerpt: string
+  uri: string
+  categories: { nodes: any }
+  thumbnail: {
+    node: { localFile: IGatsbyImageData; altText: string }
+  }
+}
+
 const PostArchive = (props: any) => {
   const {
     data: {
-      page: { title },
+      page: {
+        title,
+        template: {
+          flexibleContentModules: { contentModule },
+        },
+      },
       posts: { nodes: allPosts },
-      categories: { nodes: allCategories },
     },
-    pageContext: { postsPerPage, totalPages: numberOfPages, currentPage: page },
   } = props
+  const heroSection = contentModule[0]
 
   return (
     <>
       <Layout title={title}>
         <Edges size="lg">
-          <h1>{title}</h1>
-          <pre>{JSON.stringify(page, null, 2)}</pre>
+          <div className="bg-white">
+            <div className="max-w-7xl mx-auto pt-10 px-4 sm:pt-24 sm:px-6 md:px-8">
+              <div className="text-center">
+                {title && (
+                  <h1
+                    className="text-base font-semibold text-indigo-600 tracking-wide uppercase"
+                    children={heroSection.heroTitle}
+                  />
+                )}
+                {heroSection.heroText && (
+                  <p
+                    className="mt-1 text-4xl font-extrabold text-gray-900 sm:tracking-tight sm:text-[25px]"
+                    children={heroSection.heroText}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
 
-          <h2>All Posts</h2>
-          <pre>{JSON.stringify(allPosts, null, 2)}</pre>
+          {allPosts &&
+            allPosts.map((post: ArticleItem) => {
+              const image =
+                post?.thumbnail?.node?.localFile &&
+                getImage(post.thumbnail.node.localFile)
 
-          <h2>All Categories</h2>
-          <pre>{JSON.stringify(allCategories, null, 2)}</pre>
+              return (
+                <>
+                  <div className="relative bg-white pt-10 sm:pt-24">
+                    <div className="md:mx-auto md:max-w-7xl md:px-8 md:grid md:grid-cols-2 md:gap-24 md:items-start">
+                      <div className="relative sm:pt-10 md:pt-0">
+                        <div
+                          aria-hidden="true"
+                          className="hidden sm:block md:absolute md:inset-y-0 md:right-0 md:w-screen"
+                        >
+                          <svg
+                            className="absolute top-8 left-1/2 -ml-3 md:-right-8 md:left-auto md:top-12"
+                            width={404}
+                            height={392}
+                            fill="none"
+                            viewBox="0 0 404 392"
+                          >
+                            <defs>
+                              <pattern
+                                id="02f20b47-fd69-4224-a62a-4c9de5c763f7"
+                                x={0}
+                                y={0}
+                                width={20}
+                                height={20}
+                                patternUnits="userSpaceOnUse"
+                              >
+                                <rect
+                                  x={0}
+                                  y={0}
+                                  width={4}
+                                  height={4}
+                                  className="text-gray-200"
+                                  fill="currentColor"
+                                />
+                              </pattern>
+                            </defs>
+                            <rect
+                              width={404}
+                              height={392}
+                              fill="url(#02f20b47-fd69-4224-a62a-4c9de5c763f7)"
+                            />
+                          </svg>
+                        </div>
+                        <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 md:px-0 md:max-w-none md:pt-20">
+                          <div className="relative pt-64 pb-10 rounded-2xl shadow-xl overflow-hidden">
+                            {image && (
+                              <GatsbyImage
+                                image={image}
+                                alt={post?.thumbnail?.node?.altText || ""}
+                                className="absolute inset-0 h-full w-full object-cover"
+                              />
+                            )}
+                          </div>
+                        </div>
+                      </div>
 
-          <h2>Posts Per Page</h2>
-          <pre>{JSON.stringify(postsPerPage, null, 2)}</pre>
-
-          <h2>Number of Pages</h2>
-          <pre>{JSON.stringify(numberOfPages, null, 2)}</pre>
+                      <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 md:px-0">
+                        <div className="pt-10 sm:pt-10 md:pt-20">
+                          {post.title && (
+                            <Link to={`${post.uri}`}>
+                              <h2
+                                children={post.title}
+                                className="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl"
+                              />
+                            </Link>
+                          )}
+                          {post.categories && (
+                            <p className="text-sm font-medium pt-5">
+                              {post.categories &&
+                                post.categories.nodes.map(
+                                  (
+                                    cat: { name: string; uri: string },
+                                    i: number
+                                  ) => {
+                                    return (
+                                      <Link
+                                        to={cat.uri}
+                                        className={`${
+                                          i === 0 ? "" : "ml-[5px]"
+                                        } text-indigo-600 hover:text-indigo-600`}
+                                        children={cat.name}
+                                      />
+                                    )
+                                  }
+                                )}
+                            </p>
+                          )}
+                          {post.excerpt && (
+                            <div
+                              className="mt-6 text-gray-500 space-y-6"
+                              children={Parser(post.excerpt)}
+                            />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )
+            })}
         </Edges>
       </Layout>
     </>
@@ -52,7 +178,7 @@ export const pageQuery = graphql`
       uri
       template {
         ... on WpDefaultTemplate {
-          templateName
+          ...DefaultTemplateFragment
         }
       }
     }
