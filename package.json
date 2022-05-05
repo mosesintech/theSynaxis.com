@@ -9,6 +9,7 @@
     "@emotion/styled": "^11.8.1",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
+    "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.2",
     "cross-fetch": "^3.1.5",
     "dotenv": "^10.0.0",

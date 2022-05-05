@@ -10,14 +10,15 @@ import "../../styles/index.css"
 interface LayoutProps {
   children: React.ReactNode
   title?: string
+  archivePath?: string
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, title }) => {
+const Layout: React.FC<LayoutProps> = ({ children, title, archivePath }) => {
   return (
     <>
       <Seo title={title} />
       <Header />
-      <Breadcrumbs title={title} />
+      <Breadcrumbs title={title} archivePath={archivePath} />
       {children}
       <CookieBanner />
       <Footer />
