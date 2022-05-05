@@ -40,6 +40,21 @@ export const PostFragment = graphql`
         }
       }
     }
+    archiveThumbnail: featuredImage {
+      node {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              quality: 90
+              layout: CONSTRAINED
+              width: 1440
+              height: 1440
+            )
+          }
+        }
+      }
+    }
     categories {
       nodes {
         id

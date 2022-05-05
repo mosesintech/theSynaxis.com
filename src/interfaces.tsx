@@ -1,4 +1,18 @@
 import { PageProps } from "gatsby"
+import { IGatsbyImageData } from "gatsby-plugin-image"
+
+interface ArticleItem {
+  title: string
+  excerpt: string
+  uri: string
+  categories: { nodes: any }
+  thumbnail: {
+    node: { localFile: IGatsbyImageData; altText: string }
+  }
+  archiveThumbnail: {
+    node: { localFile: IGatsbyImageData; altText: string }
+  }
+}
 
 interface FlexibleContentProps extends PageProps {
   title?: string
@@ -16,4 +30,4 @@ interface TemplatePageProps extends PageProps {
   }
 }
 
-export { FlexibleContentProps, TemplatePageProps }
+export { ArticleItem, FlexibleContentProps, TemplatePageProps }

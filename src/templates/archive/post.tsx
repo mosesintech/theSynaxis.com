@@ -1,20 +1,11 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Parser from "html-react-parser"
 
+import { ArticleItem } from "../../interfaces"
 import Layout from "../../components/Layout/Layout"
 import Edges from "../../components/Layout/Edges"
-
-interface ArticleItem {
-  title: string
-  excerpt: string
-  uri: string
-  categories: { nodes: any }
-  thumbnail: {
-    node: { localFile: IGatsbyImageData; altText: string }
-  }
-}
 
 const PostArchive = (props: any) => {
   const {
@@ -56,8 +47,8 @@ const PostArchive = (props: any) => {
           {allPosts &&
             allPosts.map((post: ArticleItem) => {
               const image =
-                post?.thumbnail?.node?.localFile &&
-                getImage(post.thumbnail.node.localFile)
+                post?.archiveThumbnail?.node?.localFile &&
+                getImage(post.archiveThumbnail.node.localFile)
 
               return (
                 <>
@@ -106,7 +97,7 @@ const PostArchive = (props: any) => {
                             {image && (
                               <GatsbyImage
                                 image={image}
-                                alt={post?.thumbnail?.node?.altText || ""}
+                                alt={post?.archiveThumbnail?.node?.altText || ""}
                                 className="absolute inset-0 h-full w-full object-cover"
                               />
                             )}

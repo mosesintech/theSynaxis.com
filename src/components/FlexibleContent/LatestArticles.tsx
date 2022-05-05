@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Parser from "html-react-parser"
 
-import { FlexibleContentProps } from "../../interfaces"
+import { FlexibleContentProps, ArticleItem } from "../../interfaces"
 import Edges from "../Layout/Edges"
 import Grid from "../Layout/Grid"
 import Button from "../../components/Button"
@@ -32,16 +32,6 @@ interface ArticlesProps {
     url?: string
   }
   items?: any
-}
-
-interface ArticleItem {
-  title: string
-  excerpt: string
-  uri: string
-  categories: { nodes: any }
-  thumbnail: {
-    node: { localFile: IGatsbyImageData; altText: string }
-  }
 }
 
 const LatestArticles: React.FC<LatestArticlesProps> = props => {
