@@ -97,7 +97,9 @@ const PostArchive = (props: any) => {
                             {image && (
                               <GatsbyImage
                                 image={image}
-                                alt={post?.archiveThumbnail?.node?.altText || ""}
+                                alt={
+                                  post?.archiveThumbnail?.node?.altText || ""
+                                }
                                 className="absolute inset-0 h-full w-full object-cover"
                               />
                             )}
