@@ -92,18 +92,20 @@ const PostArchive = (props: any) => {
                             />
                           </svg>
                         </div>
-                        <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 md:px-0 md:max-w-none md:pt-20">
-                          <div className="relative pt-64 pb-10 rounded-2xl shadow-xl overflow-hidden">
-                            {image && (
-                              <GatsbyImage
-                                image={image}
-                                alt={
-                                  post?.archiveThumbnail?.node?.altText || ""
-                                }
-                                className="absolute inset-0 h-full w-full object-cover"
-                              />
-                            )}
-                          </div>
+                        <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
+                          <figure>
+                            <div className="aspect-w-12 aspect-h-7 md:aspect-none">
+                              {image && (
+                                <GatsbyImage
+                                  image={image}
+                                  alt={
+                                    post?.archiveThumbnail?.node?.altText || ""
+                                  }
+                                  className="rounded-lg shadow-lg object-cover object-center"
+                                />
+                              )}
+                            </div>
+                          </figure>
                         </div>
                       </div>
 
