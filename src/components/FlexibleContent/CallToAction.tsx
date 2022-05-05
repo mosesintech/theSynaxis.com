@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import { FlexibleContentProps } from "../../interfaces"
 import Edges from "../Layout/Edges"
+import CalltoAction from "../../components/CallToAction"
 
 export interface CTAProps extends FlexibleContentProps {
   ctaTitle?: string
@@ -18,22 +19,17 @@ export interface CTAProps extends FlexibleContentProps {
 
 const CallToAction: React.FC<CTAProps> = props => {
   const {
-    title,
-    // uri,
-    // slug,
-    // ctaTitle,
-    // ctaContent,
+    ctaTitle,
+    ctaContent,
     // ctaPhoneNumber,
     // ctaBackgroundColor,
-    // ctaButton,
+    ctaButton,
   } = props
 
   return (
     <>
       <Edges size="lg">
-        <h1>CALL TO ACTION</h1>
-        <pre>{JSON.stringify(title, null, 2)}</pre>
-        <pre>{JSON.stringify(props, null, 2)}</pre>
+        <CalltoAction title={ctaTitle} text={ctaContent} button={ctaButton} />
       </Edges>
     </>
   )

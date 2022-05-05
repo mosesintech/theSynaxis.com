@@ -11,14 +11,24 @@ interface LayoutProps {
   children: React.ReactNode
   title?: string
   archivePath?: string
+  isCategory?: boolean
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, title, archivePath }) => {
+const Layout: React.FC<LayoutProps> = ({
+  children,
+  title,
+  archivePath,
+  isCategory,
+}) => {
   return (
     <>
       <Seo title={title} />
       <Header />
-      <Breadcrumbs title={title} archivePath={archivePath} />
+      <Breadcrumbs
+        title={title}
+        archivePath={archivePath}
+        isCategory={isCategory}
+      />
       {children}
       <CookieBanner />
       <Footer />

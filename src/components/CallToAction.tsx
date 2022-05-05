@@ -1,10 +1,11 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "@emotion/styled"
 
 import SingleForm from "./SingleForm"
 
 function CallToAction(props: any) {
-  const { title, text, form } = props
+  const { title, text, form, button } = props
 
   return (
     <>
@@ -89,6 +90,14 @@ function CallToAction(props: any) {
                       <SingleForm form={form} />
                     </FormContainer>
                   </>
+                )}
+
+                {button && (
+                  <ButtonContainer>
+                    <Link to={button?.url}>
+                      <button children={button?.title} />
+                    </Link>
+                  </ButtonContainer>
                 )}
               </div>
             </div>
@@ -188,6 +197,42 @@ const FormContainer = styled.div`
     }
     &--large {
       width: 100%;
+    }
+  }
+`
+
+const ButtonContainer = styled.div`
+  button {
+    display: block;
+    width: 100%;
+    color: #fff;
+    border-radius: 0.375rem;
+    border-color: transparent;
+    margin-top: 1.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: #6366f1;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+
+    :hover {
+      color: #818cf8;
+      background-color: #eef2ff;
+    }
+
+    :focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      box-shadow: var(#4f46e5) 0 0 0 calc(2px + var(2px)) var(rgb(255 255 255));
+    }
+
+    @media (min-width: 640px) {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
   }
 `
