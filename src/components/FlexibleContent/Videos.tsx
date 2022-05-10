@@ -70,7 +70,10 @@ const Videos: React.FC<VideoProps> = props => {
                                 vid.downloadableItems.map(
                                   (item: {
                                     downloadableItemTitle: string
-                                    downloadableItemLink: string
+                                    downloadableItemLink: {
+                                      title: string
+                                      url: string
+                                    }
                                   }) => {
                                     return (
                                       <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
