@@ -22,7 +22,6 @@ import Switch, { SwitchProps } from "./Switch"
 import TextArea, { TextAreaProps } from "./TextArea"
 import TextBlock, { TextBlockProps } from "./TextBlock"
 import TextImage, { TextImageProps } from "./TextImage"
-import ThreeColumns, { ThreeColumnsProps } from "./ThreeColumns"
 import Videos, { VideoProps } from "./Videos"
 
 interface Components {
@@ -48,7 +47,6 @@ interface Components {
   TextArea: React.FC<TextAreaProps>
   TextBlock: React.FC<TextBlockProps>
   TextImage: React.FC<TextImageProps>
-  ThreeColumns: React.FC<ThreeColumnsProps>
   Videos: React.FC<VideoProps>
 }
 
@@ -84,7 +82,6 @@ const components: Components = {
   TextArea,
   TextBlock,
   TextImage,
-  ThreeColumns,
   Videos,
 }
 

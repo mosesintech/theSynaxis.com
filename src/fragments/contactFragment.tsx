@@ -26,7 +26,6 @@ export const contactFragment = graphql`
         ...contactTextArea
         ...contactTextBlock
         ...contactTextImage
-        ...contactThreeColumns
         ...contactVideos
       }
     }

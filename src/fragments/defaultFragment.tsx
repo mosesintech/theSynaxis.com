@@ -26,7 +26,6 @@ export const defaultFragment = graphql`
         ...TextArea
         ...TextBlock
         ...TextImage
-        ...ThreeColumns
         ...Videos
       }
     }
